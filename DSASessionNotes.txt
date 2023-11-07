@@ -1,0 +1,217 @@
+1.Find the greatest of 3 numbers
+2.Find the even or odd based on the input
+
+
+Tell me the steps to write an algorithm 
+
+Step1: START
+Step2: Declare three variables a,b,c
+Step3: Compare values between a and b
+Step4: If a>b and a>c
+Step5: Print 'A is greatest'
+Step6: If b>a and b>c
+Step7: Print 'B is greatest'
+Step8: If Step 6 & 7 failes
+Step9: Print 'C is greatest
+Step10: STOP
+
+
+Space Complexity is determined by S(P)=C+SP(I)
+
+C is fixed part
+SP(I) is the variable part
+
+Step1:START
+Step2:c=a+b+10
+Step3:Stop
+
+S(P)=1+3
+
+Time Complexity is determined by T(n)=c*n
+
+
+Search Algorithm:
+
+Step 1: Set i to 1
+Step 2: if i > n then go to step 7
+Step 3: if A[i] = x then go to step 6
+Step 4: Set i to i + 1
+Step 5: Go to Step 2
+Step 6: Print Element x Found at index i and go to step 8
+Step 7: Print element not found
+Step 8: Exit
+
+
+10,50,60,78,56,45,89,25
+
+45-6th-- Worst Case
+
+10,25,45,50,56,60,78,89
+
+45-3rd -- Best Case
+
+Sorting Algorithm:
+
+1. First Iteration (Compare and Swap)
+
+-Starting from the first index, compare the first and the second elements.
+-If the first element is greater than the second element, they are swapped.
+-Now, compare the second and the third elements. Swap them if they are not in order.
+-The above process goes on until the last element
+
+12,34,56,89,90,72,100
+
+
+100,34,2,98,76,45,56
+
+
+
+
+Fractional Knapsack Problem:
+
+Choose the item that has maximum value vs weight ratio
+
+Person1 wt=10, value=60
+Person2 wt=20, value=100
+Person3 wt=30, value=120
+
+If item wt=50, 
+
+
+wt=10+20+20
+value=60+100+120*(2/3)=>60+100+80=240
+
+------------------------------------------------------
+
+Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline.It is also given that every job takes a single of unit of time sot the minimum possible deadline for any job is 1.
+Maximize the total profit if only one job can be scheduled at a time
+
+Inputs: Four jobs with the below deadlines and profits
+
+JobId			DeadLine			Profit
+-------------------------------------
+a				4					20
+b				1					10
+c				1					40
+d				1					30
+
+Maximum Profit=> c,d
+Maximum DeadLines=>a,c
+
+a,b=>30a,c=>60,a,d=>50=>60,5
+b,a->10,b,c=>50,b,d=>40
+
+
+Inputs:
+-------
+JobId			DeadLine		Profit
+---------------------------------
+a				2				100
+b				1				19	
+c				2				27
+d				1				25
+e				3				15
+
+a,c,e=>Maximum profit
+
+
+
+
+Tower of Hanoi consists of three pegs or towers with n disks placed one over the other. The objective of the puzzle is to move the stack to another peg following these simple rules. Only one disk can be moved at a time. No disk can be placed on top of the smaller disk.
+
+
+Algorithm:
+----------
+1.Calculate the total numberof moves required i.e.pow(2,n)-1 here n is the number of disk
+
+2.If number of disks is even then interchange destination and auxiliary pole
+3. for i=1 to total number of moves
+		if i%3==1:
+			legal movement of top disk between source pole and destination pole
+		if i%3==2:
+			legal movement of disk between source pole and auxiliary pole
+		if i%3==0:
+			legal movement of top disk between auxiliary pole and destination pole
+
+
+Arrays:
+-------
+arr[]={holds the data}
+
+Traverse:
+
+Step1:Start
+Step2:Inititialize counter variable Set i=LB
+Step3:Repeat for i=LB to UB
+Step4:Apply process to arr[i]
+Step5:Incremnent i
+Step6:Go to Step 3
+Step7:Stop
+
+
+Insert:
+-------
+Step1:Start
+Step2:Set size=size+1
+Step3:Set i=size-1
+Step4:Repeat Step 5 and 6 for i=size-1 to i>=pos-1
+Step5:Set arr[i+1]=arr[i]
+Step6:Set i=i-1
+Step7:End of Loop
+Step8:set arr[pos-1]=x
+Step9:Stop
+
+
+Delete:
+-------
+Step1:Start
+Step2:Set i=pos-1
+Step3:Repeat step 4 and 5 for i=pos-1 to i<size
+Step4:Set arr[i]=arr[i+1]
+Step5:Set i=i+1
+Step6:End of Loop
+Step7:Set size=size-1
+Step8:Stop
+
+
+Search:
+------
+Step1:Start
+Step2:Set i=0
+Step3:Repeat steps 4 and 5 while i<N
+Step4:If arr[i] is equal to the value then goto step 6
+Step5:Set i=i+1
+Step6:Print value
+Step7:Stop
+
+
+Update:
+-------
+Step1:Start
+Step2:Set arr[i-1]=item
+Step3:End
+
+
+
+
+Write an algorithm for inserting element in an array at the specific position
+Write an algorithm for deleting an element in an array at the end
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
