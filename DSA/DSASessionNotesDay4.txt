@@ -1,0 +1,178 @@
+Working of Insertion Sort:
+--------------------
+
+12		11  	13		5		6
+
+First Iteration:
+
+11 		12		13		5 		6
+
+Second Iteration:
+
+11 		12		13		5 		6
+
+Third Iteration:
+
+11		12		5		13		6
+11		5		12		13		5
+5		11		12		13		6
+
+
+Fourth Iteration:
+5		11		12		6		13
+5		11		6		12		13
+5		6		11		12		13
+
+
+
+Approach:
+---------
+1.The procedurea takes a single argumen'A', which is a list of sortable items
+2.The variable 'n' is assigned the length of array Array
+3.The outer for lopp starts at index 1 and runs for 'n-1' iterations,
+where n is the length of the array
+4.The inner while loop starts at the current index i of the outer for loop and compares each element to its left neighbor. If an element is smaller than the left neighbor, the elements are swapped.
+5.The inner while loop continues to move an element to the left as long
+as its is smaller than the element to its left
+6.Once the inner while loop is finished, the elemnt at the current index is in its
+correct position in the sorted portion of the array
+7.The outer for loop continues iterating through the array until all the elments
+are in their correct positions and the array is fully sorted.
+
+
+
+
+ALGORITHM:
+---------
+
+To sort an array of size N in ascending order
+
+Step1:Iterate from arr[1] to arr[N] over the array
+Step2:Compare the current element(key) to its predecessor.
+Step3:IF the key element is smaller than its predecessor, compare it to the element before. Move the greater element one position up to make space for the swapped elememt
+Step4:Repeat Step 2 and 3 until all the elements are sorted
+
+
+
+
+Comparsion:
+-----------
+Bubble sort repeatedly compares and swaps adjacent elements in every pass.
+
+Selection sort selects the i-th smallest element and places at the i-th position
+
+
+Implementation:
+---------------
+
+Sort an array 0's,1's and 2's using the pointer
+
+001101210
+
+
+arr[1] to arr[low-1]
+arr[low] to arr[mid]
+arr[mid] to arr[high-1]
+arr[high] to arr[n]
+
+ALGORITHM:
+-----------
+1.Keep three indices low=1,mid=n/2 and high=N, and there are four ranges,
+	1 to low(the range containing 0)
+	low to mid(the range containing 1)
+	mid to high(the range containing unknown elements)
+	high to N(the range containing 2)
+2.Traverse the array from start to end and mid is less than high.(loop counter is i)
+3.If the element is 0 then swap the element with element in the low index
+update low=low+1 and mid=mid+1
+4.If the element is 1 then update mid=mid+1
+5.If the element is 2 then swap the elemnt with the element at index high and update
+high=high-1 and update i=i-1
+6.Repear step 3,4 and 5 until we identify and place digits in correct indices
+7.Print the array
+
+
+
+PreOrder Traversal:
+-------------------
+
+Until all nodes of the tree are not visited
+
+1.Visit the root node
+2.Traverse the left subtree recursively
+3.Traverse the right subtree recursively
+
+
+A->B->D->E->C->F->G
+
+
+PostOrder Traversal:
+-------------------
+
+
+
+Until all the nodes of the tree are not visited
+
+1.Traverse the left subtree recursively
+2.Traverse the right subtree recursively
+3.Visit the root node
+
+D->E->B->F->G->C->A
+
+
+
+InOrder Traversal:
+-------------------
+
+Until all the nodes of the tree are not visited
+
+1.Traverse the left subtree recursively
+2.Visit the root node
+3.Traverse the right subtree recursively
+
+D->B->E->A->F->C->G
+
+
+
+Binary Search Tree:
+
+Searching:
+---------
+ALGORITHM:
+----------
+1.First, compare the element to be searched with the roor element of the tree
+2.If root is matched with the target element, then return the node's location
+3.If it is not matched, then check whether the item is less than the root element, if it is smaller than the root element, then move to left sub tree.
+4.If it is larger than the root element, then move to the right subtree.
+5.Repeat the above procedure recursively until the match is found
+6.If the element is not found or not present in the tree then return NULL.
+
+Implementation:
+---------------
+
+Sorted Array to Balanced BST
+
+Given a sorted array. Write a function that creates a Balanced Binary Search Tree using array elements.
+
+Examples: 
+
+Input: arr[] = {1, 2, 3}
+Output: A Balanced BST
+      2
+    /  \
+ 1     3 
+
+ALGORITHM:
+----------
+1.Set the middle elemnt of the array as a root.
+2.Recursively do the same for the left half and right half
+3.Get the middle of the left half and make it the left child of the root created in step1
+4.Get the middle of the right half and make it the right child of the root created in
+step1
+5.Print the preorder of the tree
+
+
+
+
+
+

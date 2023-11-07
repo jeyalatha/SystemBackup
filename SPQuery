@@ -1,0 +1,16 @@
+savetodb -- not creating hidden view in update
+
+
+dr_desser_sp_searchtsk - Last Query   Else If @engg_iltsk_task_status is Null
+de_ui_extended_properties - SELECT	@ReportName			= rep.report_name,  -- need to use Publish tables 
+							SELECT @SPReportName = rep.report_name,
+							
+de_dnld_sp_dnldico			insert  into #de_rmt_ico_ui_tmp  
+ep_generate_uixml			IF EXISTS (
+						SELECT 'x'
+						FROM ep_section_hierarchy(NOLOCK)
+						WHERE guid = @guid
+						
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "D:\Git\support-tools\" -TargetDir "D:\PlatformEnhancements\2023\JanRelease\ModelRecon\" -FromDate "2023-02-02 00:00:00" -ToDate "2023-02-03 24:00:00"
+
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine

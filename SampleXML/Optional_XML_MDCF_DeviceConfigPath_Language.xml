@@ -1,0 +1,41 @@
+<codegeneration>
+  <model customer="Ramco" project="UnitTestProj" ecrno="DES_ECR_00004" process="DemoProcess" component="DesignService" componentdesc="DesignService" appliation_rm_type="SQL Server" generationpath="N" platform="DOTNET" deploydeliverables="n" requestid="" codegenclient="" requeststart_datetime="Jan  1 1900 12:00AM" build="Y" guid="b7eff8ff-e400-46af-8dde-d10a5dbb1f6a" />
+  <languages>
+    <language id="1" desc="English" selected="y" />
+    <language id="2" desc="German" selected="y" />
+    <language id="3" desc="French" selected="n" />
+	<language id="5" desc="Hindi" selected="n" />
+  </languages>
+  <configxmls chart="y" state="y" ddt="y" cexml="n" errorlookup="y" />
+  <scripts edksscript="n" reportscript="n" depscript="n" activityoffset="0" wflowscript="n" wflowoffset="0" />
+  <exceltemplates testcomplete="n" mdcf="y" />
+  <options>
+    <option rtgif="n" />
+    <option selallforgridcheckbox="n" />
+    <option contextmenu="n" />
+    <option extjs="y" />
+    <option compresshtml="n" />
+    <option compressjs="n" />
+    <option alltaskdata="n" />
+    <option cellspacing="n" />
+    <option gridfilter="n" />
+    <option labelselect="n" />
+    <option split="n" />
+    <option ellipses="n" />
+    <option deviceconfigpath="c:\users\vima605rn14\onedrive - ramco systems limited\volume d files\2k23\june\codegen services" />
+    <option iphone="n" />
+    <option secondarylinks="n" />
+    <option extjs6="y" />
+    <option mhub2="n" />
+    <option multiplettx="n" />
+    <option reportformat="generic type" />
+    <option desktopdlv="n" />
+    <option allstyle="n" />
+    <option removemstdc="n" />
+    <option evolvjsneeded="n" />
+    <option isserversidefileid="n" />
+  </options>
+  <service dll="n" error="n" intd="n" defaultasnull="n" />
+  <activities />
+  <htmls />
+</codegeneration>

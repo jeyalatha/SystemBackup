@@ -1,0 +1,654 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ApplnObjectDetail",
+    "description": "Application API to get the detailed information of the given object such as Table, View, Stored Procedure Function and synonym.",
+    "version": "1",
+    "x-processname": "AppDBObjects",
+    "x-componentname": "ApplnObjectDetail",
+    "x-componentnamealias": "ApplnObjectDetail",
+    "x-specid": 24,
+    "x-specname": "ApplnObjectDetail",
+    "x-specdate": "2023-08-07T11:58:45.6170000",
+    "x-specversion": 1,
+    "x-includeprocessinroute": true,
+    "x-includecomponentinroute": true
+  },
+  "paths": {
+    "/sps_functions": {
+      "summary": "To get the detailed information of the Application objects such as Stored Procedure, Function and Synonym.",
+      "description": "To get the detailed information of the Application objects such as Stored Procedure, Function and Synonym.",
+      "get": {
+        "summary": "To get the detailed information of the given object.",
+        "description": "To get the detailed information of the given object.",
+        "operationId": "GetSPFuncDetails",
+        "parameters": [
+          {
+            "name": "DefinitionRequired",
+            "in": "query",
+            "description": "Definition Required",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ObjectName",
+            "in": "query",
+            "description": "Object Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ObjectType",
+            "in": "query",
+            "description": "Object Type",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detailed information of the given object fetched successfully for the Stored Procedure, Function and synonym.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SPFunction"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationmethodmap": {
+          "MethodMapInfo": {
+            "MethodID": 39,
+            "ComponentName": "ApplnObjectDetail",
+            "MethodName": "APPDEP_GET_SPFUNC_DETAIL_MT",
+            "MethodVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "Spfunction",
+          "ParameterMappings": {
+            "APPDEP_GET_SPFUNC_DETAIL_MT_in": {
+              "ParameterMapInfo": [
+                {
+                  "ApiParameterName": "DefinitionRequired",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ObjectName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ObjectType",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Spfunction",
+                "IsMultiOut": false,
+                "SchemaVariable": "spfunction",
+                "ModelName": "rset2"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Spfunction",
+                  "DataType": "String",
+                  "PropertyName": "Definition",
+                  "ModelName": "rset2",
+                  "MethodParameterName": "definition"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Spfunction",
+                "DisplaySchemaType": "Parameter",
+                "IsMultiOut": false,
+                "SchemaVariable": "spfunction.Parameters",
+                "ModelName": "_rset1"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "String",
+                  "PropertyName": "BaseDataType",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "basedatatype"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "String",
+                  "PropertyName": "BaseObject",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "baseobject"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "int",
+                  "PropertyName": "DataLength",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "datalength"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "String",
+                  "PropertyName": "ParameterFlowDirection",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "parameterflowdirection"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "String",
+                  "PropertyName": "ParameterName",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "parametername"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Parameter",
+                  "DataType": "String",
+                  "PropertyName": "UserDefinedDatatype",
+                  "ModelName": "_rset1",
+                  "MethodParameterName": "userdefineddatatype"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/tables_views": {
+      "summary": "To get the detailed information of the Application objects such as Table, View and Synonym",
+      "description": "To get the detailed information of the Application objects such as Table, View and Synonym",
+      "get": {
+        "summary": "To get the detailed information of the given object.",
+        "description": "To get the detailed information of the given object.",
+        "operationId": "GetTableViewDetails",
+        "parameters": [
+          {
+            "name": "DefinitionRequired",
+            "in": "query",
+            "description": "Definition Required",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ObjectName",
+            "in": "query",
+            "description": "Object Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ObjectType",
+            "in": "query",
+            "description": "Object Type",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detailed information of the given object fetched successfully such as Table, View and synonym.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TableView"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationmethodmap": {
+          "MethodMapInfo": {
+            "MethodID": 40,
+            "ComponentName": "ApplnObjectDetail",
+            "MethodName": "APPDEP_GET_TABLEVIEW_DETAIL_MT",
+            "MethodVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "Tableview",
+          "ParameterMappings": {
+            "APPDEP_GET_TABLEVIEW_DETAIL_MT_in": {
+              "ParameterMapInfo": [
+                {
+                  "ApiParameterName": "DefinitionRequired",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ObjectName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ObjectType",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Tableview",
+                "IsMultiOut": false,
+                "SchemaVariable": "tableview",
+                "ModelName": "rs2"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Tableview",
+                  "DataType": "String",
+                  "PropertyName": "Definition",
+                  "ModelName": "rs2",
+                  "MethodParameterName": "definition"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Tableview",
+                "DisplaySchemaType": "Column",
+                "IsMultiOut": false,
+                "SchemaVariable": "tableview.Columns",
+                "ModelName": "_rs1"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "BaseDataType",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "basedatatype"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "BaseObject",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "baseobject"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "ColumnName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "columnname"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "int",
+                  "PropertyName": "DataLength",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "datalength"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "IsNullable",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "isnullable"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "IsPrimaryKey",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "isprimarykey"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Column",
+                  "DataType": "String",
+                  "PropertyName": "UserDefinedDatatype",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "userdefineddatatype"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "apierror": {
+        "type": "object",
+        "properties": {
+          "seqNo": {
+            "type": "integer",
+            "description": "Error Sequence Number",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Error ID",
+            "format": "int32"
+          },
+          "source": {
+            "type": "string",
+            "description": "Error Source"
+          },
+          "description": {
+            "type": "string",
+            "description": "Error Description"
+          },
+          "correctiveAction": {
+            "type": "string",
+            "description": "Error CorrectiveAction"
+          }
+        },
+        "description": "Error Object",
+        "x-schemarequired": false
+      },
+      "Column": {
+        "type": "object",
+        "properties": {
+          "BaseDataType": {
+            "type": "string",
+            "description": "Base DataType"
+          },
+          "BaseObject": {
+            "type": "string",
+            "description": "Base Object"
+          },
+          "ColumnName": {
+            "type": "string",
+            "description": "Column Name"
+          },
+          "DataLength": {
+            "type": "integer",
+            "description": "Data Length"
+          },
+          "IsNullable": {
+            "type": "string",
+            "description": "Is Nullable"
+          },
+          "IsPrimaryKey": {
+            "type": "string",
+            "description": "Is PrimaryKey"
+          },
+          "UserDefinedDatatype": {
+            "type": "string",
+            "description": "User Defined Datatype"
+          }
+        },
+        "description": "Detailed information of the given Table, View and synonym.",
+        "x-schemarequired": false
+      },
+      "Parameter": {
+        "type": "object",
+        "properties": {
+          "BaseDataType": {
+            "type": "string",
+            "description": "Base DataType"
+          },
+          "BaseObject": {
+            "type": "string",
+            "description": "Base Object"
+          },
+          "DataLength": {
+            "type": "integer",
+            "description": "Data Length"
+          },
+          "ParameterFlowDirection": {
+            "type": "string",
+            "description": "Parameter Flow Direction"
+          },
+          "ParameterName": {
+            "type": "string",
+            "description": "Parameter Name"
+          },
+          "UserDefinedDatatype": {
+            "type": "string",
+            "description": "User Defined Datatype"
+          }
+        },
+        "description": "Detailed information of the given Stored Procedure and Function.",
+        "x-schemarequired": false
+      },
+      "SPFunction": {
+        "type": "object",
+        "properties": {
+          "Definition": {
+            "type": "string",
+            "description": "Definition"
+          },
+          "Parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter"
+            },
+            "description": "Parameter"
+          }
+        },
+        "x-schemarequired": false
+      },
+      "TableView": {
+        "type": "object",
+        "properties": {
+          "Definition": {
+            "type": "string",
+            "description": "Definition"
+          },
+          "Columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Column"
+            },
+            "description": "Columns"
+          }
+        },
+        "x-schemarequired": false
+      },
+      "apierrors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/apierror"
+        },
+        "description": "List of Error Object",
+        "x-schemarequired": false
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "BAD DATA",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierrors"
+            }
+          }
+        }
+      },
+      "Error500": {
+        "description": "INVALID REQUEST",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierror"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "core_rids": {
+        "type": "oauth2",
+        "description": "Authorization header using the Bearer scheme. Example: \\\"Authorization: Bearer {token}\\\"",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "scopes": {
+              "rvw_impersonate": "User impersonation scope"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "scopes": {
+              "rvw_nonimpersonate": "Service impersonation scope"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "refreshUrl": "https://www.ramco.com/rvw",
+            "scopes": {
+              "rvw_anonymous": "User impersonation scope"
+            }
+          }
+        }
+      }
+    }
+  }
+}

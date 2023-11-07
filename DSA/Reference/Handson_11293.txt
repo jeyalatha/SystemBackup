@@ -1,0 +1,115 @@
+Algorithm:
+
+1. Write an algorithm and identify best and worst case inputs for the below questions 1. Union of two arrays Given two arrays a[] and b[] of size n and m respectively. The task is to find the number of elements in the union between these two arrays. Union of the two arrays can be defined as the set containing distinct elements from both the arrays. If there are repetitions, then only one occurrence of element should be printed in the union. Note : Elements are not necessarily distinct.
+
+Algorithm:
+
+step1: Start
+step2: declare i,j,a[],b[],c[]
+step3: declare a for size of a array
+step4: declare b for size of b array
+step5: do loop upto a and b with incremented variable i,j.
+step6: a[i] value smaller than a[j] value then add the a[i] value in c[i]
+step7: a[i] value greater than a[j] value then add the a[i] value in c[j]
+step8: both values are increment i, j
+step9: add the remaining elements in the c[]array.
+step10: get the size of the array.
+step11: stop
+
+
+2. N Students of different heights are attending an assembly. The heights of the students are represented by an array H[]. The problem is that if a student has less or equal height than the student standing in front of him, then he/she cannot see the assembly. Find the minimum number of students to be removed such that maximum possible number of students can see the assembly. - arrange the numbers in array - in asc order - sort	
+
+Algorithm:
+
+step1: Start
+step2: declare n, h[], result, i, j
+step3: get the height array
+step4: loop the array upto n with increment variable i
+step5: if i = n-2 the j=i+1
+step6: if h[i] > h[j]
+step7: increment the result.
+step8: print the result;
+step9: stop
+
+
+
+3. Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element. 
+
+Algorithm:
+
+step1: Start
+step2: declare n,a[],i
+step3: loop until n with the increment variable i
+step4: get the value of a[i]
+step5: if a[i] not equals i+1 print i+1
+step6: stop
+
+
+Greedy Algorithms:
+
+1. Minimum product subset of an array Given array a, we have to find the minimum product possible with the subset of elements present in the array. The minimum product can be a single element also.
+Copyright 2022, Ramco Systems Limited. Information subject to change. All rights acknowledged. Page 3 of 4
+Examples:
+Input : a[] = { -1, -1, -2, 4, 3 } Output : -24 Explanation : Minimum product will be ( -2 * -1 * -1 * 4 * 3 ) = -24
+
+Algorithm:
+step1: start
+step2: declare variable n, a[]
+step3: if n==1 then print a[0]
+step4: get the negative number size
+step5: get the positive number size
+step6: get the zero value size in the array;
+step7: if even number negative number and no zero then multiply the value other than maximum negative number
+step8: if odd number negative number and no zero then multiply all the values in the array
+step9: if zero and positive values and no negative then print zero
+step10: if no negative number then print lowest value in the array
+step11: stop
+
+
+2. Minimum sum by choosing minimum of pairs from array Given an array A[] o n-elements. We need to select two adjacent elements and delete the larger of them and store smaller of them to another array say B[]. We need to perform this operation till array A[] contains only single element. Finally, we have to construct the array B[] in such a way that total sum of its element is minimum. Print the total sum of array B[] Examples:
+Input : A[] = {3, 4}
+Output : 3
+Input : A[] = {2, 4, 1, 3}
+Output : 3
+
+Algorithm:
+
+step1: start
+step2: declare variable n, a[],i,j,b[]
+step3: loop until a size is equals to 1
+step4: get the initial 2 values 
+step5: compare a[i], a[j]
+step6: delete maximum of a[i],a[j]
+step7: store the smallest value in b array;
+step8: goto step3
+step9: sum the b array elements
+step10: print the sum
+step11: stop
+
+Divide and Conquer:
+
+1. Find the element that appears once in sorted array
+
+Algorithm:
+
+step1: start
+step2: declare variable n, a[], i,j
+step3: loop until get the single element in the array
+step4: initialize i=0,j=1
+step5: get the element a[i], a[j]
+step6: if a[i] and a[j] equals i = i+2, j=j+2
+step7: if a[i] and a[j] not equals print a[i]
+step8: stop
+
+2. Sum of Middle Elements of two sorted arrays
+
+Algorithm:
+step1: start
+step2: declare variable n, a[],b[],c[]
+step3: get the values for a and b array
+step4: loop the arrays until n
+step5: add the values to the c array
+step6: get the n and n+1 value from the c array
+step7: sum the value of n and n+1 index of the c array.
+step8: print the sum
+step9: stop

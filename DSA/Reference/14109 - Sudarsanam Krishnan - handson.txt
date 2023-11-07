@@ -1,0 +1,132 @@
+1. Union of two arrays
+
+1. start
+2. declare U array.
+3. declare and get inputs from user for arrays A & B
+4. Count of array A = N and array B = M.
+5. declare counter = 0, count = N + M  
+6. if counter < N, goto step 7 else goto step 10
+7. Set U[counter]=A[counter]
+8. counter = counter + 1
+9. goto step 6
+10. set counter = 0
+11. if counter < M, goto step 13 else goto step 15
+12. Set U[counter + N]=B[counter]
+13. counter = counter + 1
+14. goto step 11
+15. set counter1=0
+16. if counter1 < count goto step 17 else goto step 26
+17. set swapped = false
+18. set counter2=0
+19. if counter2 < count goto step 20 else goto step 23
+20. if U[counter2] > U[counter2+1] then swap them & set swapped = true
+21. counter2=counter2+1
+22. goto step 19
+23. if swapped = false then goto step 26
+24. counter1=counter1+1
+25. goto step 16
+26. set counter=0, dist_count = 1
+27. if counter < count-1 goto next step else goto step 31
+28. if U[counter] <> U[counter + 1] dist_count = dist_count + 1
+29. counter = counter + 1
+30. goto step 27
+31. print dist_count
+32. stop
+
+
+2. Minimize number of students to be removed
+
+1. start
+2. Get array H.  Size of H = N
+3. set counter=0, remove_count=0, taller_removed = false
+4. if counter < N-1 then goto step5 else goto step 9
+5. if taller_removed = false and H[counter] >= H[counter+1] then remove_count = remove_count + 1 else taller_removed = true
+6. if taller_removed = true  and H[counter] <= H[counter+1] then remove_count = remove_count + 1
+7. counter = counter + 1
+8. goto step 4
+9. print remove_count
+10. stop
+
+3. Missing number in array
+
+1. start
+2. get array A, size of array = N-1
+3. set counter=0
+4. if counter < N-1 goto next step else goto step 14
+5. set swapped = false
+6. set counter2=0
+7. if counter2 < N-1 goto next step else goto step 11
+8. if U[counter2] > U[counter2+1] then swap them & set swapped = true
+9. counter2=counter2+1
+10. goto step 7
+11. if swapped = false then goto step 14
+12. counter=counter+1
+13. goto step 4
+14. set counter =0, missing_element = null 
+15. if counter < N-1 goto next step else goto step 19
+16. if A[counter] = counter + 1 then goto next step else missing_element = counter + 1; goto step 19
+17. counter = counter + 1
+18. goto step 15
+19. print missing_element
+20. stop
+
+4. Minimum product subset of an array
+
+1. start
+2. get array A, size of Array = N
+3. if N=1, print A[0]; stop;
+4. set max_neg = -2147483648, min_pos = 2147483647, neg_count = 0, zero_count=0, product = 1, counter = 0 
+5. if counter < N then goto next step else goto step 15
+6. if A[counter] =0 then zero_count = zero_count + 1
+7. if A[counter] < 0 then goto next step else goto step 10
+8. neg_count = neg_count + 1
+9. if max_neg <  A[counter] then max_neg = A[counter]
+10. if A[counter] > 0 then goto next step else goto step 12
+11. if min_pos > A[counter] then min_pos = A[counter]
+12. product = product * A[counter]
+13. counter = counter + 1
+14. goto step 5
+15. if (zero_count = N OR (neg_count = 0 AND zero_countero > 0)) then print 0; stop
+16. if neg_count = 0 print min_pos; stop
+17. if (NOT(neg_count AND 1) AND neg_count <> 0) then product = product / max_neg
+18. print product
+19. stop
+
+5. Minimum sum by choosing minimum of pairs from array
+
+1. start
+2. get array A, size of Array = N
+3. set counter = 0, minimum = A[counter]
+4. if counter < N then goto next step else goto step 8
+5. if A[counter] < minimum then minimum = A[Counter]
+6. counter = counter + 1
+7. goto step 4
+8. print minimum * (N-1)
+9. stop
+
+6. Find the element that appears once in sorted array
+
+1. start
+2. get array A, size of Array = N
+3. set counter = 0, dist_value = A[counter], dist_value_count = 0, answer = -1
+4. if counter < N then goto next step else goto step 9
+5. if A[counter] = dist_value then dist_value_count = dist_value_count + 1; goto step 7 else goto next step 
+6. if dist_value_count = 1 then answer = dist_value; goto step 9 else dist_value = A[counter];dist_value_count = 1
+7. counter = counter + 1
+8. goto step 4
+9. print answer
+10. stop
+
+7. Sum of Middle Elements of two sorted arrays
+
+1. start
+2. get array A & B, size of Arrays = N
+3. set counter1 =0, counter2=0, elem_count=0, Merged Array M=[], counter3=0
+4. if counter1 < N and counter2 < N then goto next step else goto 10
+5. if A[counter1] <= B[counter2] then goto next step else goto step 7
+6. set M[counter3] = A[counter1]; counter1=counter1+1; counter3=counter3+1; elem_count=elem_count+1;goto step 8
+7. set M[counter3] = B[counter2]; counter2=counter2+1; counter3=counter3+1; elem_count=elem_count+1
+8. if elem_count = N + 1 then goto step 10
+9. goto step 4
+10. print M[elem_count - 1] + M[elem_count]
+11. stop

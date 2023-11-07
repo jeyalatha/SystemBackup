@@ -1,0 +1,663 @@
+==================================================================================================================================================================
+					Activity DLL Manual Changes in [ezwizard.cs]
+==================================================================================================================================================================
+
+1.	In the using part at the end add the following
+
+	// Wizard Manul Changes
+	using System.Text.RegularExpressions;
+	using System.IO;
+
+==================================================================================================================================================================
+
+2.	Add the following in the class declartion module
+
+	// Wizard Manul Changes
+	private string ezwz_ChildActivityName = "";
+	private string ezwz_ChildIlboName = "";
+	private string ezwz_SubData = "";
+	private string publishData = "";
+
+==================================================================================================================================================================
+
+3.	In the GetControlX Method, In the SwitchCase before default add the following [If GetControlX method not found, then find GetControl]
+
+	// Wizard Manul Changes
+	case "ezwizard":
+		GetControl_EzWizard();
+
+		Edit m_customnullcontrol;
+		m_customnullcontrol = new Edit();
+		m_customnullcontrol.SetIdentity(sControlID, ControlType.RSDisplayOnly);
+		m_customnullcontrol.AddView(sControlID, false, "char", string.Empty, string.Empty);
+		return m_customnullcontrol;
+
+==================================================================================================================================================================
+
+4.	In the	SetDataItem Method, after Trace Statement in the begining of the method
+
+		// Wizard Manul Changes
+		switch(sLinkID)
+		{
+			case "ezwizardlinkid":
+				if(sDataItemName == "hdnwiz_link_ctrl1")
+				{
+					m_conhdnwiz_link_ctrl1.SetControlValue("hdnwiz_link_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl2")
+				{
+					m_conhdnwiz_link_ctrl2.SetControlValue("hdnwiz_link_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl3")
+				{
+					m_conhdnwiz_link_ctrl3.SetControlValue("hdnwiz_link_ctrl3", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl4")
+				{
+					m_conhdnwiz_link_ctrl4.SetControlValue("hdnwiz_link_ctrl4", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl5")
+				{
+					m_conhdnwiz_link_ctrl5.SetControlValue("hdnwiz_link_ctrl5", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl6")
+				{
+					m_conhdnwiz_link_ctrl6.SetControlValue("hdnwiz_link_ctrl6", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl7")
+				{
+					m_conhdnwiz_link_ctrl7.SetControlValue("hdnwiz_link_ctrl7", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl8")
+				{
+					m_conhdnwiz_link_ctrl8.SetControlValue("hdnwiz_link_ctrl8", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl9")
+				{
+					m_conhdnwiz_link_ctrl9.SetControlValue("hdnwiz_link_ctrl9", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_ctrl10")
+				{
+					m_conhdnwiz_link_ctrl10.SetControlValue("hdnwiz_link_ctrl10", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_date_ctrl1")
+				{
+					m_conhdnwiz_link_date_ctrl1.SetControlValue("hdnwiz_link_date_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_date_ctrl2")
+				{
+					m_conhdnwiz_link_date_ctrl2.SetControlValue("hdnwiz_link_date_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_date_ctrl3")
+				{
+					m_conhdnwiz_link_date_ctrl3.SetControlValue("hdnwiz_link_date_ctrl3", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_datetime_ctrl1")
+				{
+					m_conhdnwiz_link_datetime_ctrl1.SetControlValue("hdnwiz_link_datetime_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_datetime_ctrl2")
+				{
+					m_conhdnwiz_link_datetime_ctrl2.SetControlValue("hdnwiz_link_datetime_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_datetime_ctrl3")
+				{
+					m_conhdnwiz_link_datetime_ctrl3.SetControlValue("hdnwiz_link_datetime_ctrl3", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_int_ctrl1")
+				{
+					m_conhdnwiz_link_int_ctrl1.SetControlValue("hdnwiz_link_int_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_int_ctrl2")
+				{
+					m_conhdnwiz_link_int_ctrl2.SetControlValue("hdnwiz_link_int_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_int_ctrl3")
+				{
+					m_conhdnwiz_link_int_ctrl3.SetControlValue("hdnwiz_link_int_ctrl3", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_num_ctrl1")
+				{
+					m_conhdnwiz_link_num_ctrl1.SetControlValue("hdnwiz_link_num_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_num_ctrl2")
+				{
+					m_conhdnwiz_link_num_ctrl2.SetControlValue("hdnwiz_link_num_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_num_ctrl3")
+				{
+					m_conhdnwiz_link_num_ctrl3.SetControlValue("hdnwiz_link_num_ctrl3", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_time_ctrl1")
+				{
+					m_conhdnwiz_link_time_ctrl1.SetControlValue("hdnwiz_link_time_ctrl1", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_time_ctrl2")
+				{
+					m_conhdnwiz_link_time_ctrl2.SetControlValue("hdnwiz_link_time_ctrl2", sValue, 0);
+				}
+				if(sDataItemName == "hdnwiz_link_time_ctrl3")
+				{
+					m_conhdnwiz_link_time_ctrl3.SetControlValue("hdnwiz_link_time_ctrl3", sValue, 0);
+				}
+				break;
+		}
+
+==================================================================================================================================================================
+
+5.	Add the following two functions at the end of the class
+
+	// Wizard Manul Changes
+	private string GetWizardControlValue(string _activityName, string _ilboName, string _controlId, string _viewName)
+	{
+		string _linkData = String.Empty;
+		int _outValue;
+		long _noOfSelRows, _selectedRowIndex;
+		SessionManager ISManager;
+		IILBO ilbo;
+		IControl _linkControl = null;
+		_outValue = 0;
+		_noOfSelRows = 0;
+		_selectedRowIndex = 0;
+		try
+		{
+			ISManager = (SessionManager)System.Web.HttpContext.Current.Session["SessionManager"];
+			ilbo = ISManager.GetScreenObject(_activityName, _ilboName);
+
+			_linkControl = ilbo.GetControl(_controlId);
+
+			if (_linkControl != null)
+			{
+				if (Int32.TryParse(_viewName, out _outValue))
+				{
+					_noOfSelRows = ((Multiline)ilbo.GetControl(_controlId)).GetNumSelectedRows();
+
+					if(_noOfSelRows > 0)
+						_selectedRowIndex = ((Multiline)ilbo.GetControl(_controlId)).GetNthSelectedRow(_noOfSelRows);
+
+					_linkData = _linkControl.GetControlValue(_viewName, _selectedRowIndex);
+				}
+				else
+					_linkData = _linkControl.GetControlValue(_viewName);
+			}
+		}
+		catch (Exception e)
+		{
+			return _linkData;
+		}
+
+		return _linkData;
+	}
+		
+	// Wizard Manul Changes
+	private void GetControl_EzWizard()
+	{
+		SessionManager ISManager;
+		IILBO ilbo;
+		IControl subControl = null;
+		try
+		{
+			ISManager = (SessionManager)System.Web.HttpContext.Current.Session["SessionManager"];
+
+			if(ezwz_ChildActivityName == "" || ezwz_ChildIlboName == "")
+				return;
+
+			ilbo = ISManager.GetScreenObject(ezwz_ChildActivityName, ezwz_ChildIlboName);
+
+			string[] SubDataRowArr = Regex.Split(ezwz_SubData, "~~:~~");
+			string subCtrlName = "", subViewName = "", subValue = "";
+
+			if(SubDataRowArr.Length > 0)
+			{
+				for(int rowCnt = 0; rowCnt < SubDataRowArr.Length; rowCnt++)
+				{
+					string[] SubDataColArr = Regex.Split(SubDataRowArr[rowCnt], "::~::");
+
+					if (SubDataColArr.Length > 2)
+					{
+						subCtrlName = SubDataColArr[0];
+						subViewName = SubDataColArr[1];
+						subValue = SubDataColArr[2];
+						subCtrlName = subCtrlName.ToLower();
+						subViewName = subViewName.ToLower();
+
+						subControl = ilbo.GetControl(subCtrlName);
+
+						if (subControl != null)
+							subControl.SetControlValue(subViewName, subValue);
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			return;
+		}
+
+		ezwz_ChildActivityName = "";
+		ezwz_ChildIlboName = "";
+		ezwz_SubData = "";
+
+		return;
+	}
+
+==================================================================================================================================================================
+
+6.	In the PerformTask method, for the task "ezwmainscperfortr", replace entire code with the following
+
+	// Wizard Manul Changes
+	IControl ActionPerformedControl = this.GetControl("txtperformedaction");
+	string ActionPerformedControlValue = ActionPerformedControl.GetControlValue("txtperformedaction");
+
+	string[] ActionDetails = Regex.Split(ActionPerformedControlValue, "::#::");
+
+	string messageId = ActionDetails[0];
+	string actionId = ActionDetails[1];
+	string actionText = ActionDetails[2];
+	string actionImage = ActionDetails[3];
+	string actionType = ActionDetails[4].ToLower();
+	string commentAllowed = ActionDetails[5];
+	string actionObjectName = ActionDetails[7].ToLower();
+	string actionActivity = ActionDetails[8].ToLower();
+	string actionUI = ActionDetails[9].ToLower();
+	string actionSubData = ActionDetails[11];
+	string actionLinkId = "";
+
+	if (ActionDetails.Length > 12)
+	{
+		actionLinkId = ActionDetails[12];
+		actionLinkId = actionLinkId.Trim();
+	}
+
+	sTargetURL = String.Empty;
+
+	if (actionType == "launch" || actionType == "edklaunch")
+	{
+		ezwz_ChildActivityName = actionActivity;
+		ezwz_ChildIlboName = actionUI;
+		ezwz_SubData = actionSubData;
+
+		if(actionLinkId == null || actionLinkId == "")
+			actionLinkId = "0";
+
+		ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "LINK");
+
+		ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "LINK");
+		lSubscriptionID = IDBroker.SubscribeLink("ezwizard", "ezwizard", actionActivity, actionUI, actionLinkId);
+		IDBroker.SubscribeData(lSubscriptionID, "ezwizard", FlowAttribute.flowIn, false, "ezwizard", "ezwizard", "ezwizard");
+
+		if(actionType == "edklaunch")
+			sTargetURL = IHandler.LaunchEDKScreenObject(actionActivity, actionUI, "ezwizard", "ezwizard", "ezwizard");
+		else
+			sTargetURL = IHandler.LaunchScreenObject(actionActivity, actionUI, "ezwizard", "ezwizard", "");
+
+		return true;
+	}
+	else
+	{
+		ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "TRANS");
+
+		bServiceResult = ExecuteService("ezwmscrsrperfor");
+
+		if(bServiceResult == false){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+
+==================================================================================================================================================================
+
+7.	In the BeginPerformTask method, for the task "ezwmainscperfortr", replace entire code with the following
+
+	// Wizard Manul Changes
+	string sTargetURL = "";
+	IControl ActionPerformedControl = this.GetControl("txtperformedaction");
+	string ActionPerformedControlValue = ActionPerformedControl.GetControlValue("txtperformedaction");
+
+	string[] ActionDetails = Regex.Split(ActionPerformedControlValue, "::#::");
+
+	string messageId = ActionDetails[0];
+	string actionId = ActionDetails[1];
+	string actionText = ActionDetails[2];
+	string actionImage = ActionDetails[3];
+	string actionType = ActionDetails[4].ToLower();
+	string commentAllowed = ActionDetails[5];
+	string actionObjectName = ActionDetails[7].ToLower();
+	string actionActivity = ActionDetails[8].ToLower();
+	string actionUI = ActionDetails[9].ToLower();
+	string actionSubData = ActionDetails[11];
+	string actionLinkId = "";
+
+	if (ActionDetails.Length > 12)
+	{
+		actionLinkId = ActionDetails[12];
+		actionLinkId = actionLinkId.Trim();
+	}
+
+	sTargetURL = String.Empty;
+
+	ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "TRANS");
+
+	if (actionType == "launch" || actionType == "edklaunch")
+	{
+		ezwz_ChildActivityName = actionActivity;
+		ezwz_ChildIlboName = actionUI;
+		ezwz_SubData = actionSubData;
+
+		if(actionLinkId == null || actionLinkId == "")
+			actionLinkId = "0";
+
+		ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "LINK");
+		lSubscriptionID = IDBroker.SubscribeLink("ezwizard", "ezwizard", actionActivity, actionUI, actionLinkId);
+
+		IDBroker.SubscribeData(lSubscriptionID, "ezwizard", FlowAttribute.flowIn, false, "ezwizard", "ezwizard", "ezwizard");
+		reqState.SetTraversal(actionActivity, actionUI, "ezwizard", "ezwizard");
+
+		if (iEDKEIExists)
+		{
+			return base.BeginPerformTask(cb, reqState);
+		}
+		else
+		{
+			if(actionType == "edklaunch")
+				return ISManager.SetAsyncCompleted(new VWResponseState());
+			else
+				return IHandler.BeginLaunchScreenObject(cb, reqState);
+		}
+	}
+	else
+	{							
+		reqState.ServiceName = "ezwmscrsrperfor";
+		reqState.TransactionScope = 0;
+		return BeginExecuteService(cb, reqState);
+	}
+
+==================================================================================================================================================================
+
+8.	In the EndPerformTask method, for the task "ezwmainscperfortr", replace entire code with the following
+
+	// Wizard Manul Changes
+	IControl ActionPerformedControl = this.GetControl("txtperformedaction");
+	string ActionPerformedControlValue = ActionPerformedControl.GetControlValue("txtperformedaction");
+
+	string[] ActionDetails = Regex.Split(ActionPerformedControlValue, "::#::");
+
+	string actionType = ActionDetails[4].ToLower();
+	string actionActivity = ActionDetails[8].ToLower();
+	string actionUI = ActionDetails[9].ToLower();
+
+	sTargetURL = String.Empty;
+
+	if (actionType == "launch" || actionType == "edklaunch")
+	{
+		if(actionType == "edklaunch")
+			resState.TargetURL = IHandler.LaunchEDKScreenObject(actionActivity, actionUI, "ezwizard", "ezwizard", "ezwizard");
+		else
+			resState.TargetURL = IHandler.EndLaunchScreenObject(ar);
+
+		return true;
+	}
+	else
+	{
+		bServiceResult = EndExecuteService(ar);
+
+		if(bServiceResult == false){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+
+==================================================================================================================================================================
+
+9.	In the AddViewInfo method, find "m_conmlmessageml.SetPageRowCount" and replace entire line with the following
+
+	// Wizard Manul Changes
+	m_conmlmessageml.SetPageRowCount(6 * 3);
+	m_conmlmessageml.SetVisibleRowCount(6);
+
+==================================================================================================================================================================
+
+10.	Find "private Group m_conradsubscriptionlevel" in class declaration section and replace the entire line with the following:
+	// Wizard Manul Changes
+	private Ramco.VW.RT.Web.Controls.Group m_conradsubscriptionlevel	=	new Ramco.VW.RT.Web.Controls.Group();
+
+==================================================================================================================================================================
+
+11.	In BeginPerformTask method, before default switch case statement, add the following:
+	// Wizard Manul Changes
+	case "tskstdwizardlink":
+		string srcComponent = String.Empty, srcActivity = String.Empty, srcIlbo = String.Empty;
+		string tgtComponent = String.Empty, tgtActivity = String.Empty, tgtIlbo = String.Empty;
+		string srcSeqNo = String.Empty, tgtSeqNo = String.Empty, linkType = String.Empty, actntype = String.Empty;
+		string srcCtrlId = String.Empty, srcViewName = String.Empty, srcValue = String.Empty;
+		string tgtCtrlId = String.Empty, tgtViewName = String.Empty, subDataValue = String.Empty;
+
+		string _linkData = String.Empty;
+		string sWizardDetails = (String) System.Web.HttpContext.Current.Request.QueryString["RVWRTQS_WIZARDDET"].ToLower();
+
+		XmlDocument linkDataDoc;
+		XmlNodeList linkDataList;
+		XmlNode linkDataNode;
+
+		Dictionary <string,string> WizardKeyValuePair = new Dictionary<string,string>();
+		string[] WizDetArr = sWizardDetails.Split(',');         
+		foreach (string WizItmArr in WizDetArr)
+		{
+			string[] WizItmDetArr= WizItmArr.Split(':');
+			if (WizItmDetArr.Length > 1)
+				WizardKeyValuePair.Add(WizItmDetArr[0], WizItmDetArr[1]);
+		}
+
+		actntype = WizardKeyValuePair["actntype"];
+		tgtComponent = WizardKeyValuePair["tc"];
+		tgtActivity = WizardKeyValuePair["ta"];
+		tgtIlbo = WizardKeyValuePair["ti"];
+
+		tgtActivity = tgtActivity.ToLower();
+		tgtIlbo = tgtIlbo.ToLower();
+
+		ezwz_ChildActivityName = tgtActivity;
+		ezwz_ChildIlboName = tgtIlbo;
+
+		if (actntype == "savetask")
+		{
+			srcComponent = WizardKeyValuePair["sc"];
+			srcActivity = WizardKeyValuePair["sa"];
+			srcIlbo = WizardKeyValuePair["si"];
+
+			srcActivity = srcActivity.ToLower();
+			srcIlbo = srcIlbo.ToLower();
+
+			linkType = WizardKeyValuePair["lnkt"];
+			srcSeqNo = WizardKeyValuePair["psno"];
+			tgtSeqNo = WizardKeyValuePair["sno"];
+
+			_linkData = GetWizardControlValue("ezwizard", "ezwizard", "hdnnew_activitykey", "hdnnew_activitykey");
+
+			if (_linkData != null && _linkData != "")
+			{
+				linkDataDoc = new XmlDocument();
+
+				try
+				{
+					linkDataDoc.LoadXml(_linkData);
+
+					if (linkType == "step")
+					{
+						linkDataList = linkDataDoc.SelectNodes("//link_data/step/di[@tsq='" + tgtSeqNo + "' and @ssq='" + srcSeqNo + "']");
+
+						if (linkDataList != null && linkDataList.Count > 0)
+						{
+							for(int linkDataCnt = 0; linkDataCnt < linkDataList.Count; linkDataCnt++)
+							{
+								linkDataNode = linkDataList[linkDataCnt];
+
+								srcCtrlId = linkDataNode.Attributes.GetNamedItem("scid").Value;
+								srcViewName = linkDataNode.Attributes.GetNamedItem("scvn").Value;
+								tgtCtrlId = linkDataNode.Attributes.GetNamedItem("tcid").Value;
+								tgtViewName = linkDataNode.Attributes.GetNamedItem("tcvn").Value;
+
+								srcValue = GetWizardControlValue(srcActivity, srcIlbo, srcCtrlId, srcViewName);
+
+								if (subDataValue != "")
+									subDataValue = subDataValue + "~~:~~";
+
+								subDataValue = subDataValue + tgtCtrlId + "::~::" + tgtViewName + "::~::" + srcValue;
+							}
+						}
+					}
+					else
+					{
+						linkDataList = linkDataDoc.SelectNodes("//link_data/ilbo/di[@sq='" + tgtSeqNo + "' and @sil='" + srcIlbo + "' and @til='" + tgtIlbo + "']");
+
+						if (linkDataList != null && linkDataList.Count > 0)
+						{
+							for (int linkDataCnt = 0; linkDataCnt < linkDataList.Count; linkDataCnt++)
+							{
+								linkDataNode = linkDataList[linkDataCnt];
+
+								srcCtrlId = linkDataNode.Attributes.GetNamedItem("scid").Value;
+								srcViewName = linkDataNode.Attributes.GetNamedItem("scvn").Value;
+								tgtCtrlId = linkDataNode.Attributes.GetNamedItem("tcid").Value;
+								tgtViewName = linkDataNode.Attributes.GetNamedItem("tcvn").Value;
+
+								srcValue = GetWizardControlValue(srcActivity, srcIlbo, srcCtrlId, srcViewName);
+
+								if (subDataValue != "")
+									subDataValue = subDataValue + "~~:~~";
+
+								subDataValue = subDataValue + tgtCtrlId + "::~::" + tgtViewName + "::~::" + srcValue;
+							}
+						}
+					}
+				}
+				catch (Exception e){}
+			}
+
+			ezwz_SubData = subDataValue;
+
+			return ISManager.SetAsyncCompleted(new VWResponseState());
+		}
+		else
+		{
+			sTargetURL = String.Empty;
+
+			actionLinkId = "0";
+
+			ISMContext.SetContextValue("SCT_LASTTASK_TYPE", "LINK");
+			lSubscriptionID = IDBroker.SubscribeLink("ezwizard", "ezwizard", ezwz_ChildActivityName, ezwz_ChildIlboName, actionLinkId);
+
+			IDBroker.SubscribeData(lSubscriptionID, "ezwizard", FlowAttribute.flowIn, false, "ezwizard", "ezwizard", "ezwizard");
+			reqState.SetTraversal(ezwz_ChildActivityName, ezwz_ChildIlboName, "ezwizard", "ezwizard");
+		}
+
+
+		if (iEDKEIExists)
+			return base.BeginPerformTask(cb, reqState);
+		else
+			return IHandler.BeginLaunchScreenObject(cb, reqState);
+
+==================================================================================================================================================================
+
+12.	In EndPerformTask method, add the following before default switch case statement:
+	// Wizard Manul Changes
+	case "tskstdwizardlink":
+		string sWizardDetails = (String) System.Web.HttpContext.Current.Request.QueryString["RVWRTQS_WIZARDDET"].ToLower();
+		string actntype;
+
+		Dictionary <string,string> WizardKeyValuePair = new Dictionary<string,string>();
+		string[] WizDetArr = sWizardDetails.Split(',');         
+		foreach (string WizItmArr in WizDetArr)
+		{
+			string[] WizItmDetArr= WizItmArr.Split(':');
+			if (WizItmDetArr.Length > 1)
+				WizardKeyValuePair.Add(WizItmDetArr[0], WizItmDetArr[1]);
+		}
+
+		actntype = WizardKeyValuePair["actntype"];
+
+		if (actntype != "savetask")
+			resState.TargetURL = IHandler.EndLaunchScreenObject(ar);
+
+		return true;
+
+==================================================================================================================================================================
+					Activity DLL Manual Changes in [def_user_ezwizard.cs]
+==================================================================================================================================================================
+
+1.	In the function PreProcess1(), below "Trace.WriteLineIf" line, add the following:
+
+	// Wizard Manual Changes
+	IDataBroker IDBroker;
+	ISessionManager ISManager	=	(ISessionManager)System.Web.HttpContext.Current.Session["SessionManager"];
+	IDBroker = ISManager.GetDataBroker();
+	IDBroker.Transfer(TransferDirection.transferIn, "def_user_ezwizard", "def_user_ezwizard");
+
+==================================================================================================================================================================
+							Service DLL Manual Changes 
+==================================================================================================================================================================
+
+1.	Copy the Entire Content from the Source Folder [\Deliverables\Service] from Generated Path to the Target Folder D:\Chrysalis\FE\Service
+	While Copy prompts for overwite give Copy and Replace to All
+
+==================================================================================================================================================================
+
+2.	Open Compile.txt and remove Source Generation Path[Only Folder Name] in  /out and /resource
+
+==================================================================================================================================================================
+
+3.	Remove the /lib Parameter with Path excluding /debug
+
+==================================================================================================================================================================
+
+4.	Get the File Cezwmscrsrperfor.cs from VSS Path [$/R2DevVss/Platform203_4/Components/ezWizard/ManualChange] to the Target Folder 		
+	D:\Chrysalis\FE\Service
+
+==================================================================================================================================================================
+
+5.	Open Command Prompt and go to the Target Folder 
+	D:
+	[CD D:\Chrysalis\FE\Service]
+
+==================================================================================================================================================================
+
+6.	Open the below *.cs files and add nvcFW_CONTEXT["sessionid"].ToString() to the function call statement after the szRole parameter
+	Find spxs = objBRO. or res = objBRO.
+
+	Cezwmscrsrfetch1.cs
+	Cezwmscrsrfetchb.cs
+	Cezwmscrsrftchct.cs
+	Cezwmscrsrsavefa.cs
+	Cezwmscrsrfetchm.cs
+	Cezwmscrsrfetchp.cs
+	Cezwmscrsrsavepr.cs
+	Cezwmscrsrfetchr.cs
+
+==================================================================================================================================================================
+
+7.	Get the File NetModuleBuild.bat from VSS Path [$/R2DevVss/Platform203_4/Components/ezWizard/Source_DotNet/Service] to the Target Folder 		
+	D:\Chrysalis\FE\Service
+
+==================================================================================================================================================================
+
+8.	Get the File EzWizardBR.dll from VSS Path [$/R2DevVss/Platform203_4/Components/ezWizard/Source_DotNet/EzWizardBR/bin/Release] to the Target Folder 		
+	D:\Chrysalis\FE\Service
+
+==================================================================================================================================================================
+
+9.	Run NetModuleBuild.bat
+
+==================================================================================================================================================================
+
+10.	Copy c:\temp\bin\snk folder to the target folder 	
+
+==================================================================================================================================================================
+
+11.	In the Open Prompt Give the following Command
+	csc @compile.txt
+
+==================================================================================================================================================================

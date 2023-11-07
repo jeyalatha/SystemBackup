@@ -1,0 +1,107 @@
+enhancement server
+https://enhancementdev.ramco.com/rvw/hub/index.html?_dc=1684233132902&RVWRTQS_REQID=28eb3e8a-42ee-47f6-a1ef-bdf279d99d98
+induser/induser173$
+
+Model Server
+http://hcmwascnv70.ramco/rvw/hub/index.html?_dc=1684302802380
+14232/ramco@1234
+
+
+Treegrid:Indian taxes -- Ess Indian payroll taxes -- Tax declaration -proof submission
+IES_ECR_00261, IES_RCN_00213, IES_WRQ_00225
+
+Listview: Payroll Snapshot Details
+PYS_ECR_00042,PYS_RCN_00042, PYS_WRQ_00042
+
+Listedit: Statutory Reports
+RPT_ECR_00019,RPT_RCN_00019, RPT_WRQ_00019
+SRT_ECR_00206, SRT_RCN_00197, SRT_WRQ_00206
+
+Tree Grid
+List Edit
+multi select combo
+Tiles and Cards
+Metadata based hyperlink
+Combolink
+
+Carousel Section:
+==================
+Payroll Dashboard - Super Admin
+
+PDB_ECR_00188	PDB_RCN_00184 PDB_WRQ_00372
+
+
+ComboLink:
+==========
+View Resource Request
+WFP_WRQ_00047, WFP_ECR_00066,	WFP_RCN_00055
+
+Combolink - Fixed Asset Hub
+FAH_WRQ_00031, FAH_RCN_00029, FAH_ECR_00031
+
+
+Tiles and Cards:
+=================
+Manage My Training
+TRG_WRQ_00173, TRG_ECR_00174	TRG_RCN_00167
+right_corosol_sec
+
+declare @p128 int
+set @p128=0
+exec trg_mtr_spfetcoroso 
+@ctxt_ouinstance=N'4',@ctxt_user=N'INDUSER',@ctxt_language=1,@ctxt_service=N'trg_mtr_srhrmlst',@ctxt_role=N'HCMROLE',@cororsol_edit_ctrl=1,@guid=N'EB023477-FC0F-4F40-994F-8108FCA43A97',@hdnbu=N'',@hdncc=N'',@hdncsouinstance=-915,@hdncustomer=N'',@hdnguid=N'',@hdnhguidrfsc=N'',@hdnhiddencontrol1=N'',@hdnhiddencontrol2=N'',@hdnhractivityrfsc=N'',@hdnhrinfoouidrfsc=-915,@hdnhrouidrfsc=-915,@hdnhtext1rfsc=N'',@hdnhtext2rfsc=N'',@hdnkeyfieldml1rfsc=N'',@hdnkeyfieldml2rfsc=N'',@hdnkeyfieldml3rfsc=N'',@hdnkeyfieldml4rfsc=N'',@hdnlo=N'',@hdnml1timestamprfsc=N'',@hdnml2timestamprfsc=N'',@hdnml3timestamprfsc=N'',@hdnml4timestamprfsc=N'',@hdnou=N'',@hdnouinstancerfsc=-915,@hdnouinstancetxtrfsc=-915,@hdnproject=N'',@hdnrecloc=N'',@hdnsrcloc=N'',@hdntimestamp=-915,@hdn_csou=4,@hdn_empcode=N'IND00013',@hdn_empinou=4,@hdn_empngou=3,@hdn_feedback_lnk=N'',@hdn_feedback_summary_lnk=N'',@hdn_guid=N'',@hdn_timestamp=-915,@hdn_tlgin_ou=4,@hdn_trgcal_ou=4,@hdn_trg_ou=4,@hdn_venue_leftmostml_lnk=N'',@hdn_venue_lnk=N'',@hiddencontrol1=N'',@hiddencontrol2=N'',@hiddencontrol3=N'',@hiddencontrol4=N'',@hiddencontrol5=N'',@hidden_guid=N'EB023477-FC0F-4F40-994F-8108FCA43A97',@hnctrl1=N'SUP',@hnctrl2=N'',@hnctrl3=N'ALLTRG',@hnctrl4=N'',@hnctrl5=N'',@hralltrg=N'{''tplid'':''alltrng'',''alltr'':''All 
+Training''}',@hrapprove=N'',@hrattachfile_dis=N'',@hrattach_lbl=N'{''tplid'':''atach_lbl'',''attach'':''Attachment(s)''}',@hrdateattend_lbl=N'{''tplid'':''fromdate_lbl'',''date'':''Date(s) attended''}',@hrdeclinetextarea=N'',@hrdevelop=N'',@hrempinfoouid=-915,@hrexttrng=N'{''tplid'':''exttrng'',''extr'':''Adhoc External Training \/ Online Training''}',@hrext_dateattended=N'',@hrext_dateattendedto=N'',@hrext_dateratthypen=N'-',@hrext_servprov=N'',@hrext_trngname=N'',@hrfromdate=N'2022-05-30',@hrfromdate_lbl=N'From Date',@hrhdnouid=-915,@hrhdntext1=N'',@hrhdntext2=N'',@hrhowam_lnk=N'',@hrkeywords=N'',@hrkeywords_lbl=N'Keywords',@hrlearn=N'',@hrlearn_disp=N'',@hrmosthappen_lbl=N'{''tplid'':''mosthapp'',''most'':''Most Happening''}',@hroln_remarks=N'',@hroln_status_cmb=N'',@hroln_status_hnd=N'',@hroln_trngcode=N'',@hroln_trngname=N'',@hroln_trngname_hdn1=N'',@hronlinetraining=N'ext',@hronl_achievscore=-915.00,@hronl_maxscore=-915.00,@hronl_scoreslash=N'/',@hrpref_lnk=N'',@hrrejectdetails_pop=N'{''tplid'':''decline_id'',''trname1'':'''',''pmc'':'''',''Date'':'''',''VenueName'':''''}',@hrreview=N'',@hrsearchtrg=N'',@hrsearchtrg_lbl=N'{''tplid'':''Searchtrnglbl'',''search'':''Search Training''}',@hrsearchtrg_lnk=N'{''tplid'':''searchlens''}',@hrsify_lnk=N'',@hrtimestamp=-915,@hrtimezone_cmb_hdn=59,@hrtimezone_lbl=N'Time Zone',@hrtimzone_cmb=N'(UTC+03:30) Tehran',@hrtodate=N'2023-05-30',@hrtodate_lbl=N'To Date',@hrtottime=-915.00,@hrtottimeunits=N'',@hrtottimeunits_hdn=N'',@hrtrgcal_lnk=N'{''tplid'':''trngcal'',''trgcal'':''培训日历''}',@hrviewbr_lbl=N'View Details of',@hrviewbyr_cmb=N'Me',@hrviewby_cmb=N'Courses in the next 7 days',@hrviewby_lbl=N'',@hrview_hdnvw=N'COUR',@legend_details=N'{''tplid'':''lgenrol'',''course'':''Course'',''mod'':''Module'',''pgm'':''Program'',''courmat'':''C',@oucodehide=-915,@prg_code=N'',@prj_hdn_ctrl=N'',@srccompcode=N'',@trgcalcode=N'',@txtdtformat=N'',@txtdtformatinthide=N'',@txttimestamp=N'',@viewby_hdn=N'VWME',@M_ErrorID=@p128 output
+select @p128
+
+'status' 			:'<div class="trgstatus displayBlock cur"><div class="fontRed statusfont">{Enrolled}</div><div class="Count fontRed ">{EnrollCount}</div></div>',
+'status_green'		:'<div class="trgstatus displayBlock cur"><div class="fontGreen statusfont">{Completed}</div><div class="Count fontGreen">{CompletedCount}</div></div>',
+'status_black'		:'<div class="trgstatus displayBlock cur"><div class="fontBlack statusfont">{AllRequests}</div><div class="Count fontBlack">{AllReqCount}</div></div>',
+'status_orange'		:'<div class="trgstatus displayBlock cur"><div class="fontOrange statusfont">{Recommended}</div><div class="Count fontOrange">{RecoCount}</div></div>',
+'status_Darkblue'	:'<div class="trgstatus displayBlock cur"><div class="fontDarkblue statusfont">{RecommendedCourses}</div><div class="Count fontdarkblue">{ReccourseCount}</div></div>',
+
+{'tplid':'status','Enrolled':'Enrolled','EnrollCount':'7'}
+{'tplid':'status_green','Completed':'Completed','CompletedCount':'0'}
+{'tplid':'status_black','AllRequests':'Track Requests','AllReqCount':'40'}
+{'tplid':'status_orange','Recommended':'Nominated','RecoCount':'0'}
+{'tplid':'status_Darkblue','RecommendedCourses':'Recommended Courses','ReccourseCount':'0'}
+
+
+
+
+Metadata based hyperlink:
+========================
+Parameters hub
+FSE_WRQ_00092, FSE_RCN_00089, FSE_ECR_00091
+
+Param_text_new -- Data from DB
+hdimdlparam_text_new --
+{   "tc": "packslip",        "ta": "packslipsysadd",       "ti": "packslipsysaddmain",        "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}, ]}
+{   "tc": "packslip",        "ta": "packslipsysadd",       "ti": "packslipsysaddmain",        "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+{   "tc": "lpi",             "ta": "lpi_stfuncparam",      "ti": "setfuncparam",              "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+{   "tc": "stkmnt",          "ta": "stkmntsetfd",          "ti": "stkmntsetfdmain",           "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+
+
+http://bebswascnv01.ramco/rvw/hub/index.html?_dc=1684839119005
+15677
+SYS12345$
+inthe 20th year neenga ethum special panalanalum..Amma voda
+blessings fulla ungaluku irukum ne..apram changes in the life & life style..
+kandippa oru positve approach aa irukum ne..romba peaceful a, santhosama, 
+healthy a, ungaluku pidicha mathiri life a irukanum nu pray panikiren ne..
+apram ungaloda blessings enaku ne..
+http://bebswarcnv13.ramco/rvw/hub.aspx 
+Username: ramcouser 
+Password: ramco3*
+
+Application BE details:
+bebswarcnv13.ramco
+
+syssa
+S@sys$a13*
+
+
+
+
+To get the template json
+URL + /app/classic/ + [ComponentName] + [ActivityName] + '_' + [UIName] + '_Template.json'
+https://enhancementdev.ramco.com/rvw/hub/app/classic/HRMSTRGSSIP/Trgssipsmtr_Trgssipsmtrui_Template.json 

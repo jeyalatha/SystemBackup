@@ -1,0 +1,82 @@
+Tracker: Geotrack_geotrackui.xml
+1) MLMSTD_TRACKER_CTRL - Multi control needs to be in hidden section - as there is no UI involved in this.
+2) SCRN xml Missing
+3) Default Queries for Query XML:
+	If there is a Provision to edit query and add more in-out parameters, then we can default the queries otherwise it is not required.
+	
+	mobmainscmstd_gtr - button task which returns tracker ID in the MLMSTD_TRACKER_CTRL control to START
+	mobmainscmstd_etr - button task which returns tracker ID in the MLMSTD_TRACKER_CTRL control to STOP
+	
+	mstd_geotrack_start
+		1)	TaskName: mobmainscmstd_gtr (UI task)
+			Query: 
+				Type		: Select
+				Instance	: Multi (mlmstd_tracker_ctrl)
+				Dummy SQL	: Select hex(randomblob(10)) as 'mstd_tracker_id'
+			
+			Param:
+				mstd_tracker_id - OUT
+			
+		2)	TaskName: mobmainscmstd_gtr_gtupd (STANDARD_TASK)
+			Query: 
+				Type		: Insert
+				Instance	: Single
+				Dummy SQL	: INSERT INTO tracker_lat_lng_detail (latitude,longitude,tracker_guid) VALUES (@mstd_tracker_lat,@mstd_tracker_lng,@mstd_tracker_id)
+			
+			Param:
+				mstd_tracker_lat - IN
+				mstd_tracker_lng - IN
+				mstd_tracker_id - IN
+	
+	mstd_geotrack_stop
+		1)	TaskName: mobmainscmstd_etr (UI task), mobmainscmstd_etr_gtsp (STANDARD_TASK - not used)
+			Query: 
+				Type		: Select
+				Instance	: Multi
+				Dummy SQL	: SELECT DISTINCT tracker_guid AS 'mstd_tracker_id' FROM tracker_lat_lng_detail
+			
+			Param:
+				mstd_tracker_id - OUT
+			
+	
+			
+Fence: Geofence_geofenceui.xml
+1) MLMSTD_GEOFENCE_CTRL - Multi control needs to be in hidden section
+2) SCRN XML Missing
+3) Default Queries for Query XML:
+	Provision to edit query and add more inputs.
+
+	mstd_geofence_create
+		1)	TaskName: mobmainsrmstd_gtr_gfcr (create - STANDARD_TASK)
+			Query: 
+				Type		: Select
+				Instance	: Multi
+				Dummy SQL	: Select 'fence_guid' mstd_fence_id, 13.24 mstd_center_lat, 80.006 mstd_center_lng, 500 mstd_radius_m
+			
+			Param:
+				mstd_fence_id - OUT
+				mstd_center_lat - OUT
+				mstd_center_lng - OUT
+				mstd_radius_m - OUT
+				
+		
+		2,3)TaskNames : mobmainsrmstd_gtr_gfent (enter - STANDARD_TASK) , mobmainsrmstd_gtr_gfext (exit - STANDARD_TASK)
+			Query: 
+				Type		: Update
+				Instance	: Single
+				Dummy SQL	: update fence_detail set fenceId=@mstd_fence_id, latitude=@mstd_center_lat, longitude=@mstd_center_lng
+			
+			Param:
+				mstd_fence_id - IN
+				mstd_center_lat - IN
+				mstd_center_lng - IN
+				
+	mobmainsrmstd_otr_gfrm		
+		1)	TaskName: mobmainsrmstd_otr_gfrm (remove - STANDARD_TASK)
+			Query: 
+				Type		: Select
+				Instance	: Multi
+				Dummy SQL	: SELECT DISTINCT 'fence_guid' AS 'mstd_fence_id' FROM fence_detail
+			
+			Param:
+				mstd_fence_id - OUT

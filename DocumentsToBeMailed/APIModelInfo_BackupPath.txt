@@ -1,0 +1,11 @@
+BackEnd Details:
+================
+Server		:	techwarcnv56.ramco,60253 (inst2)
+User		:	sa
+Password	:	M0delRvwrm12*
+Database	:	APIModel
+
+Backup Path:
+============
+\\techwarcnv56.ramco\DB_Backup\Inst2\Daily\APIModel
+

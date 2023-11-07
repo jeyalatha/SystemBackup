@@ -1,0 +1,3343 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ModelExplorer",
+    "description": "ModelExplorer",
+    "version": "1",
+    "x-processname": "PlfModelExplorer",
+    "x-componentname": "ModelExplorer",
+    "x-componentnamealias": "ModelExplorer",
+    "x-specid": 15,
+    "x-specname": "ModelExplorer",
+    "x-specdate": "2023-08-25T09:51:34.4330000",
+    "x-specversion": 1,
+    "x-includeprocessinroute": true,
+    "x-includecomponentinroute": true
+  },
+  "paths": {
+    "/customers": {
+      "summary": "Fetch all the  customers in the environment.This component is used by infra alone",
+      "description": "Fetch all the  customers in the environment",
+      "get": {
+        "summary": "Fetch all the  customers in the environment",
+        "description": "Fetch all the  customers in the environment",
+        "operationId": "GetCustomers",
+        "parameters": [
+          {
+            "name": "contextlangid",
+            "in": "header",
+            "description": "Language ID",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "contextouid",
+            "in": "header",
+            "description": "OU Instance ID",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "contextrolename",
+            "in": "header",
+            "description": "Role Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Customer(s) fetched successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 31,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetCustomersFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getcustomers",
+                "SegmentHierachy": "_cust_mlseg",
+                "SegmentName": "_cust_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_cust_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_cust_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_cust_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_cust_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_cust_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getcustomers.Info",
+                "SegmentHierachy": "_cust_infomlseg",
+                "SegmentName": "_cust_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_cust_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_cust_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_cust_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_cust_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects": {
+      "summary": "Fetch all the Project(s) for the given Customer",
+      "description": "Fetch all the Project(s) for the given Customer",
+      "get": {
+        "summary": "Fetch all the Project(s) for the given Customer",
+        "description": "Fetch all the Project(s) for the given Customer",
+        "operationId": "GetProjects",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Project(s) are fetched successfully for the given customer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 32,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetProjectsFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "Proj_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getprojects",
+                "SegmentHierachy": "_proj_mlseg",
+                "SegmentName": "_proj_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_proj_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_proj_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_proj_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_proj_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_proj_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getprojects.Info",
+                "SegmentHierachy": "_proj_infomlseg",
+                "SegmentName": "_proj_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_proj_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_proj_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_proj_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_proj_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes": {
+      "summary": "Fetch all the Processes for the given Customer and Project.",
+      "description": "Fetch all the Processes for the given Customer and Project.",
+      "get": {
+        "summary": "Fetch all the Processes for the given Customer and Project.",
+        "description": "Fetch all the Processes for the given Customer and Project.",
+        "operationId": "GetProcesses",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Process(s) fetched successfully for the Given Customer and Project.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 33,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetProcessFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "HdrProc_Seg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getprocesses",
+                "SegmentHierachy": "_mlproc_seg",
+                "SegmentName": "_mlproc_seg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mlproc_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mlproc_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mlproc_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mlproc_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mlproc_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getprocesses.Info",
+                "SegmentHierachy": "_mlprocinfo_seg",
+                "SegmentName": "_mlprocinfo_seg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mlprocinfo_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mlprocinfo_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mlprocinfo_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mlprocinfo_seg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components": {
+      "summary": "Fetch all the Component(s) for the given Customer, Project and Process.",
+      "description": "Fetch all the Component(s) for the given Customer, Project and Process.",
+      "get": {
+        "summary": "Fetch all the Components for the given Customer, Project and Process.",
+        "description": "Fetch all the Components for the given Customer, Project and Process.",
+        "operationId": "GetComponents",
+        "parameters": [
+          {
+            "name": "customername",
+            "in": "path",
+            "description": "Customer Name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "processname",
+            "in": "path",
+            "description": "Process Name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "projectname",
+            "in": "path",
+            "description": "Project Name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Component(s) are fetched successfully for the Given Customer, Project and Process.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 34,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetComponentsFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "Comp_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getcomponents",
+                "SegmentHierachy": "_comp_mlseg",
+                "SegmentName": "_comp_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_comp_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_comp_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_comp_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_comp_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_comp_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getcomponents.Info",
+                "SegmentHierachy": "_comp_infomlseg",
+                "SegmentName": "_comp_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_comp_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_comp_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_comp_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_comp_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents": {
+      "summary": "Fetch all the Published Documents for the given Customer, Project, Process and Component.",
+      "description": "Fetch all the Published Documents for the given Customer, Project, Process and Component.",
+      "get": {
+        "summary": "Fetch all the Published Documents for the given Customer, Project, Process and Component.",
+        "description": "Fetch all the Published Documents for the given Customer, Project, Process and Component.",
+        "operationId": "GetDocuments",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Published Documents are fetched successfully for the given Customer, Project, Process and Component.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 35,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetDocumentsFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "Doc_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getdocuments",
+                "SegmentHierachy": "_doc_mlseg",
+                "SegmentName": "_doc_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_doc_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_doc_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_doc_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_doc_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_doc_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getdocuments.Info",
+                "SegmentHierachy": "_doc_infomlseg",
+                "SegmentName": "_doc_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_doc_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_doc_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_doc_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_doc_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents/{docno}/activities": {
+      "summary": "Fetch all the Activities for the given Customer, Project, Process ,Component and the Document Number",
+      "description": "Fetch all the Activities for the given Customer, Project, Process ,Component and the Document Number.",
+      "get": {
+        "summary": "Fetch all the Activities for the given Customer, Project, Process ,Component and the Document Number",
+        "description": "Fetch all the Activities for the given Customer, Project, Process ,Component and the Document Number.",
+        "operationId": "GetActivities",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Activities are fethed successsfully for the given Customer, Project, Process ,Component and the Document Number.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 36,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetActivitiesFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "Act_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "docno",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getactivities",
+                "SegmentHierachy": "_act_mlseg",
+                "SegmentName": "_act_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_act_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_act_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_act_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_act_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_act_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getactivities.Info",
+                "SegmentHierachy": "_act_infomlseg",
+                "SegmentName": "_act_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_act_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_act_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_act_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_act_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "docno",
+          "in": "path",
+          "description": "Document Number",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents/{docno}/ilbos": {
+      "summary": "Fetch all the ILBO(s) for the given Customer, Project, Process ,Component and the Document Number.",
+      "description": "Fetch all the ILBO(s) for the given Customer, Project, Process ,Component and the Document Number.",
+      "get": {
+        "summary": "Fetch all the ILBO(s) for the given Customer, Project, Process ,Component and the Document Number.",
+        "description": "Fetch all the ILBO(s) for the given Customer, Project, Process ,Component and the Document Number.",
+        "operationId": "GetILBOs",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the ILBO(s) are fetched successfully for the given Customer, Project, Process ,Component and the Document Number.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 37,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetILBOsFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "ILBO_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "docno",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getilbos",
+                "SegmentHierachy": "_ilbo_mlseg",
+                "SegmentName": "_ilbo_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_ilbo_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_ilbo_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_ilbo_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_ilbo_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_ilbo_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getilbos.Info",
+                "SegmentHierachy": "_ilbo_infomlseg",
+                "SegmentName": "_ilbo_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_ilbo_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_ilbo_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_ilbo_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_ilbo_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "docno",
+          "in": "path",
+          "description": "Document Number",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents/{docno}/services": {
+      "summary": "Fetch all the Services for the given Customer, Project, Process, Component and the Document Number.",
+      "description": "Fetch all the Services for the given Customer, Project, Process, Component and the Document Number.",
+      "get": {
+        "summary": "Fetch all the Services for the given Customer, Project, Process, Component and the Document Number.",
+        "description": "Fetch all the Services for the given Customer, Project, Process, Component and the Document Number.",
+        "operationId": "GetServices",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the Services are fetched successfully for the given Customer, Project, Process, Component and the Document Number.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nodes"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 38,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetServicesFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Nodes>",
+          "ParameterMappings": {
+            "Ser_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "docno",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Nodes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getservices",
+                "SegmentHierachy": "_ser_mlseg",
+                "SegmentName": "_ser_mlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_ser_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_ser_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_ser_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_ser_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Nodes",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_ser_mlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Nodes",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getservices.Info",
+                "SegmentHierachy": "_ser_infomlseg",
+                "SegmentName": "_ser_infomlseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_ser_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_ser_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_ser_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_ser_infomlseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "docno",
+          "in": "path",
+          "description": "Document Number",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents/{docno}/services/{servicename}": {
+      "summary": "Fetch all the ProcessSections,Methods and Parameter for the given Service",
+      "description": "Fetch all the ProcessSections, Methods and Parameters for the given Service",
+      "get": {
+        "summary": "Fetch all the ProcessSections, Methods and Parameters for the given Service",
+        "description": "Fetch all the ProcessSections, Methods and Parameters for the given Service",
+        "operationId": "GetParamaters",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the ProcessSections, Methods and Parameters are fetched successfully for the given Service",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Services"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 29,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetParameterFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Services>",
+          "ParameterMappings": {
+            "Mex_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "docno",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "servicename",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Services",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters",
+                "SegmentHierachy": "_mex_processseg",
+                "SegmentName": "_mex_processseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Services",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mex_processseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Services",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mex_processseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Services",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mex_processseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Services",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mex_processseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Services",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mex_processseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Services",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters.Info",
+                "SegmentHierachy": "_mex_processinfo",
+                "SegmentName": "_mex_processinfo"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mex_processinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mex_processinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mex_processinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mex_processinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            },
+            "actionResponse3": {
+              "ResponseMap": {
+                "MapID": "actionResponse3",
+                "SchemaHierarchy": "Services",
+                "DisplaySchemaType": "Methodinfo",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters.Methods",
+                "SegmentHierachy": "_mex_methodseg",
+                "SegmentName": "_mex_methodseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Methodinfo",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mex_methodseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Methodinfo",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mex_methodseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Methodinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mex_methodseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Methodinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mex_methodseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Methodinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mex_methodseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse4": {
+              "ResponseMap": {
+                "MapID": "actionResponse4",
+                "SchemaHierarchy": "Methodinfo",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters.Methods.Info",
+                "SegmentHierachy": "_mex_methodinfo",
+                "SegmentName": "_mex_methodinfo"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mex_methodinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mex_methodinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mex_methodinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mex_methodinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            },
+            "actionResponse5": {
+              "ResponseMap": {
+                "MapID": "actionResponse5",
+                "SchemaHierarchy": "Methodinfo",
+                "DisplaySchemaType": "Nodeinfo",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters.Methods.Parameters",
+                "SegmentHierachy": "_mex_paramseg",
+                "SegmentName": "_mex_paramseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse5",
+                  "SchemaName": "Nodeinfo",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mex_paramseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse5",
+                  "SchemaName": "Nodeinfo",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mex_paramseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse5",
+                  "SchemaName": "Nodeinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mex_paramseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse5",
+                  "SchemaName": "Nodeinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mex_paramseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse5",
+                  "SchemaName": "Nodeinfo",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mex_paramseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse6": {
+              "ResponseMap": {
+                "MapID": "actionResponse6",
+                "SchemaHierarchy": "Nodeinfo",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getparamaters.Methods.Parameters.Info",
+                "SegmentHierachy": "_mex_paraminfo",
+                "SegmentName": "_mex_paraminfo"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse6",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mex_paraminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse6",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mex_paraminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse6",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mex_paraminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse6",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mex_paraminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": true
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "docno",
+          "in": "path",
+          "description": "Document Number",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "servicename",
+          "in": "path",
+          "description": "Service Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/customers/{customername}/projects/{projectname}/processes/{processname}/components/{componentname}/documents/{docno}/services/{servicename}/SegmentDataitem": {
+      "summary": "Fetch all the Segments and DataItem  for the given Service",
+      "description": "Fetch all the Segments and DataItem  for the given Service",
+      "get": {
+        "summary": "Fetch all the Segments and Data Items for the given Service",
+        "description": "Fetch all the Segments and Data Items for the given Service",
+        "operationId": "GetSegmentDataItems",
+        "responses": {
+          "200": {
+            "description": "All the Segments and DataItems are fetched successfully for the given Service",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Segments"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 39,
+            "ComponentName": "ModelExplorer",
+            "ServiceName": "PLFMexGetSegDataItemFetSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Segments>",
+          "ParameterMappings": {
+            "Mex_HdrSeg": {
+              "ParameterMapInfo": [
+                {
+                  "ParameterName": "componentname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "customername",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "docno",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "processname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "projectname",
+                  "IsRequired": false
+                },
+                {
+                  "ParameterName": "servicename",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Segments",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getsegmentdataitems",
+                "SegmentHierachy": "_mex_segment",
+                "SegmentName": "_mex_segment"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Segments",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mex_segment",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Segments",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mex_segment",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Segments",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mex_segment",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Segments",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mex_segment",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Segments",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mex_segment",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Segments",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getsegmentdataitems.Info",
+                "SegmentHierachy": "_mex_segmentinfo",
+                "SegmentName": "_mex_segmentinfo"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mex_segmentinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mex_segmentinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mex_segmentinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mex_segmentinfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            },
+            "actionResponse3": {
+              "ResponseMap": {
+                "MapID": "actionResponse3",
+                "SchemaHierarchy": "Segments",
+                "DisplaySchemaType": "Dataitem",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getsegmentdataitems.SegmentDataItem",
+                "SegmentHierachy": "_mex_dataitemseg",
+                "SegmentName": "_mex_dataitemseg"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Dataitem",
+                  "DataType": "String",
+                  "PropertyName": "DisplayText",
+                  "SegmentName": "_mex_dataitemseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "displaytext"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Dataitem",
+                  "DataType": "int",
+                  "PropertyName": "Expanded",
+                  "SegmentName": "_mex_dataitemseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "expanded"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Dataitem",
+                  "DataType": "String",
+                  "PropertyName": "NodeID",
+                  "SegmentName": "_mex_dataitemseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodeid"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Dataitem",
+                  "DataType": "String",
+                  "PropertyName": "NodeText",
+                  "SegmentName": "_mex_dataitemseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetext"
+                },
+                {
+                  "MapID": "actionResponse3",
+                  "SchemaName": "Dataitem",
+                  "DataType": "String",
+                  "PropertyName": "NodeType",
+                  "SegmentName": "_mex_dataitemseg",
+                  "SegmentInstance": 0,
+                  "DataItemName": "nodetype"
+                }
+              ]
+            },
+            "actionResponse4": {
+              "ResponseMap": {
+                "MapID": "actionResponse4",
+                "SchemaHierarchy": "Dataitem",
+                "DisplaySchemaType": "Attributes",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getsegmentdataitems.SegmentDataItem.Info",
+                "SegmentHierachy": "_mex_dataiteminfo",
+                "SegmentName": "_mex_dataiteminfo"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeName",
+                  "SegmentName": "_mex_dataiteminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributename"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "AttributeValue",
+                  "SegmentName": "_mex_dataiteminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "attributevalue"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "ParentNode",
+                  "SegmentName": "_mex_dataiteminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "parentnode"
+                },
+                {
+                  "MapID": "actionResponse4",
+                  "SchemaName": "Attributes",
+                  "DataType": "String",
+                  "PropertyName": "Type",
+                  "SegmentName": "_mex_dataiteminfo",
+                  "SegmentInstance": 0,
+                  "DataItemName": "type"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": false
+      },
+      "parameters": [
+        {
+          "name": "componentname",
+          "in": "path",
+          "description": "Component Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "customername",
+          "in": "path",
+          "description": "Customer Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "docno",
+          "in": "path",
+          "description": "Doc No",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "processname",
+          "in": "path",
+          "description": "Process Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "projectname",
+          "in": "path",
+          "description": "Project Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "servicename",
+          "in": "path",
+          "description": "Service Name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "apierror": {
+        "type": "object",
+        "properties": {
+          "seqNo": {
+            "type": "integer",
+            "description": "Error Sequence Number",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Error ID",
+            "format": "int32"
+          },
+          "source": {
+            "type": "string",
+            "description": "Error Source"
+          },
+          "description": {
+            "type": "string",
+            "description": "Error Description"
+          },
+          "correctiveAction": {
+            "type": "string",
+            "description": "Error CorrectiveAction"
+          }
+        },
+        "description": "Error Object",
+        "x-schemarequired": false
+      },
+      "Attributes": {
+        "type": "object",
+        "properties": {
+          "AttributeName": {
+            "type": "string",
+            "description": "Attribute Name"
+          },
+          "AttributeValue": {
+            "type": "string",
+            "description": "Attribute Value"
+          },
+          "ParentNode": {
+            "type": "string",
+            "description": "Parent Node"
+          },
+          "Type": {
+            "type": "string",
+            "description": "Type"
+          }
+        },
+        "description": "Fetch all teh relevant Attribute Name and Attribute Value for the given input node.",
+        "x-schemarequired": false
+      },
+      "DataItem": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "Display Text"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "Node ID"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "Node Text"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "Node Type"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          }
+        },
+        "description": "DataItem",
+        "x-schemarequired": false
+      },
+      "MethodInfo": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "DisplayText"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "NodeId"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "NodeText"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "NodeType"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          },
+          "Parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeInfo"
+            },
+            "description": "Parameters"
+          }
+        },
+        "description": "MethodInfo",
+        "x-schemarequired": false
+      },
+      "NodeInfo": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "Display Text"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "Node ID"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "Node Text"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "Node Type"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          }
+        },
+        "description": "ProcessSection Name",
+        "x-schemarequired": false
+      },
+      "Nodes": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "Display Text"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "Node ID"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "Node Text"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "Node Type"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          }
+        },
+        "description": "Fetch all the Node(s) for the given input node.",
+        "x-schemarequired": false
+      },
+      "Segments": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "Display Text"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "Node ID"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "NodeText"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "Node Type"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          },
+          "SegmentDataItem": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataItem"
+            },
+            "description": "Data Items"
+          }
+        },
+        "description": "Segments",
+        "x-schemarequired": false
+      },
+      "Services": {
+        "type": "object",
+        "properties": {
+          "DisplayText": {
+            "type": "string",
+            "description": "Display Text"
+          },
+          "Expanded": {
+            "type": "integer",
+            "description": "Expanded"
+          },
+          "NodeID": {
+            "type": "string",
+            "description": "Node ID"
+          },
+          "NodeText": {
+            "type": "string",
+            "description": "Node Text"
+          },
+          "NodeType": {
+            "type": "string",
+            "description": "Node Type"
+          },
+          "Info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attributes"
+            },
+            "description": "Info"
+          },
+          "Methods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MethodInfo"
+            },
+            "description": "Method Name"
+          }
+        },
+        "x-schemarequired": false
+      },
+      "apierrors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/apierror"
+        },
+        "description": "List of Error Object",
+        "x-schemarequired": false
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "BAD DATA",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierrors"
+            }
+          }
+        }
+      },
+      "Error500": {
+        "description": "INVALID REQUEST",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierror"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "core_rids": {
+        "type": "oauth2",
+        "description": "Authorization header using the Bearer scheme. Example: \\\"Authorization: Bearer {token}\\\"",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "scopes": {
+              "rvw_impersonate": "User impersonation scope"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "scopes": {
+              "rvw_nonimpersonate": "Service impersonation scope"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "refreshUrl": "https://www.ramco.com/rvw",
+            "scopes": {
+              "rvw_anonymous": "User impersonation scope"
+            }
+          }
+        }
+      }
+    }
+  }
+}

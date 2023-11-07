@@ -1,0 +1,616 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "ApplnDependency",
+        "version": "1",
+        "description": "Application Dependency",
+        "x-processname": "AppDBSchema",
+        "x-componentname": "ApplnDependency",
+        "x-componentnamealias": "ApplnDependency",
+        "x-specid": 9,
+        "x-specname": "ApplnDependency",
+        "x-specdate": "2023-06-08T13:26:15.5530000",
+        "x-specversion": 1,
+        "x-includeprocessinroute": true,
+        "x-includecomponentinroute": true
+    },
+    "paths": {
+        "/referenced_entities": {
+            "summary": "To get the list of dependent Application objects for given list of stored procedures. It is used for Dependency Viewer. It has been given as POST since input must be passed as an array.",
+            "description": "To get the list the of dependent Application objects for given list of stored procedures. It is used for Dependency Viewer. It has been given as POST since input must be passed as an array.",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReferencedEntitiesRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "parameters": [
+                    {
+                        "name": "Customer",
+                        "description": "Customer Name",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "Project",
+                        "description": "Project Name",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "ActivityName",
+                        "description": "Activity Name",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "ComponentName",
+                        "description": "Component Name",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "UIName",
+                        "description": "UI Name",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "ComponentDesc",
+                        "description": "Component Description",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "ActivityDesc",
+                        "description": "Activity Description",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "UIDesc",
+                        "description": "UI Description",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "ECRNumber",
+                        "description": "ECRNumber",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "TaskName",
+                        "description": "TaskName",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    },
+                    {
+                        "name": "AppServer",
+                        "description": "AppServer",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReferencedEntitiesResponse",
+                                    "x-schemcategory": "PRS",
+                                    "x-schemarequired": false
+                                }
+                            }
+                        },
+                        "description": "Dependent Object List Fetched Successfully"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/Error400"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/Error500"
+                    }
+                },
+                "operationId": "ListAllDependentObjects",
+                "summary": "Method to fetch list of dependent objects",
+                "description": "Method to fetch list of dependent objects",
+                "x-IsCustomCode": false,
+                "x-apipathoperationservicemap": {
+                    "ServiceMapInfo": {
+                        "ServiceID": 26,
+                        "ComponentName": "ApplnDependency",
+                        "ServiceName": "AppDependencySr",
+                        "ServiceVersion": 1
+                    },
+                    "RequestBind": {
+
+                    },
+                    "ResponseSchemaType": "List<Responsedetails>",
+                    "RequestBindings": {
+                        "1": {
+                            "RequestBind": {
+                                "DisplaySchemaType": "Requestdetails",
+                                "ForLoopRequired": false,
+                                "SchemaVariable": "lstrequestdetails",
+                                "SchemaHierarchy": "",
+                                "SegmentName": "hdrseg"
+                            },
+                            "RequestBindProperties": [
+                                {
+                                    "BindID": "1",
+                                    "SchemaName": "Requestdetails",
+                                    "PropertyName": "displayOption",
+                                    "SchemaVariable": "lstrequestdetails",
+                                    "SegmentName": "hdrseg",
+                                    "SegmentInstance": 0,
+                                    "DataItemName": "displayoption",
+                                    "SchemaCategory": "C"
+                                }
+                            ]
+                        },
+                        "2": {
+                            "RequestBind": {
+                                "DisplaySchemaType": "Requestdetails",
+                                "ForLoopRequired": false,
+                                "SchemaVariable": "res_listalldependentobjects",
+                                "SchemaHierarchy": "",
+                                "SegmentName": "hdrseg"
+                            }
+                        },
+                        "3": {
+                            "RequestBind": {
+                                "DisplaySchemaType": "Procedurelist",
+                                "ForLoopRequired": false,
+                                "SchemaVariable": "lstprocedurelist.Procedures",
+                                "SchemaHierarchy": "Requestdetails",
+                                "SegmentName": "_mlinseg"
+                            },
+                            "RequestBindProperties": [
+                                {
+                                    "BindID": "3",
+                                    "SchemaName": "Procedurelist",
+                                    "PropertyName": "procedureName",
+                                    "SchemaVariable": "lstprocedurelist.Procedures",
+                                    "SegmentName": "_mlinseg",
+                                    "SegmentInstance": 0,
+                                    "DataItemName": "procedurename",
+                                    "SchemaCategory": "C"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "context-lang-id",
+                    "description": "Language Id",
+                    "schema": {
+                        "type": "integer",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "context-ou-id",
+                    "description": "Orgnz Id",
+                    "schema": {
+                        "type": "integer",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "context-role-name",
+                    "description": "Role Id",
+                    "schema": {
+                        "type": "string",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                }
+            ]
+        },
+        "/referencing_entities": {
+            "summary": "To get the Referencing Entities Details in the Applciation Database - Fetch all the parent SPs till nth level of the given stored procedure. It is used for Dependency Viewer. ",
+            "description": "To get the Referencing Entities Details in the Applciation Database - Fetch all the parent SPs till nth level of the given stored procedure. It is used for Dependency Viewer.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReferencingEntitiesResponse",
+                                    "x-schemcategory": "PRS",
+                                    "x-schemarequired": false
+                                }
+                            }
+                        },
+                        "description": "Referencing Entities Retrieved Successfully"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/Error400"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/Error500"
+                    }
+                },
+                "operationId": "GetAllReferencingEntities",
+                "summary": "To get the Referencing Entities Details",
+                "description": "To get the Referencing Entities Details",
+                "x-IsCustomCode": false
+            },
+            "parameters": [
+                {
+                    "name": "context-lang-id",
+                    "description": "Language Id",
+                    "schema": {
+                        "type": "integer",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "context-ou-id",
+                    "description": "Orgnz Id",
+                    "schema": {
+                        "type": "integer",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "context-role-name",
+                    "description": "Role Id",
+                    "schema": {
+                        "type": "string",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "header",
+                    "required": true
+                },
+                {
+                    "name": "Name",
+                    "description": "Name",
+                    "schema": {
+                        "type": "string",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "query",
+                    "required": true
+                },
+                {
+                    "name": "Type",
+                    "description": "Type",
+                    "schema": {
+                        "type": "string",
+                        "x-schemcategory": "PP",
+                        "x-schemarequired": false
+                    },
+                    "in": "query"
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "apierror": {
+                "description": "Error Object",
+                "type": "object",
+                "properties": {
+                    "seqNo": {
+                        "format": "int32",
+                        "description": "Error Sequence Number",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "format": "int32",
+                        "description": "Error ID",
+                        "type": "integer"
+                    },
+                    "source": {
+                        "description": "Error Source",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Error Description",
+                        "type": "string"
+                    },
+                    "correctiveAction": {
+                        "description": "Error CorrectiveAction",
+                        "type": "string"
+                    }
+                },
+                "x-schemarequired": false
+            },
+            "ReferencingEntitiesList": {
+                "description": "Referencing Entities List",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "description": "Id",
+                        "type": "string"
+                    },
+                    "Type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "Name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "ReferencingEntities": {
+                        "description": "Referencing Entities",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ReferencingEntitiesList"
+                        }
+                    },
+                    "Database": {
+                        "description": "Database",
+                        "type": "string"
+                    },
+                    "Schema": {
+                        "description": "Schema",
+                        "type": "string"
+                    },
+                    "IsSelected": {
+                        "description": "Is Selected",
+                        "type": "integer"
+                    },
+                    "IsUpdated": {
+                        "description": "Is Updated",
+                        "type": "integer"
+                    },
+                    "Depth": {
+                        "description": "Depth",
+                        "type": "integer"
+                    }
+                },
+                "x-schemarequired": false
+            },
+            "apierrors": {
+                "description": "List of Error Object",
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/apierror"
+                },
+                "x-schemarequired": false
+            },
+            "ReferencedEntitiesList": {
+                "description": "ReferencedEntitiesList",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "description": "Id",
+                        "type": "string"
+                    },
+                    "Name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "Type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "ReferencingCount": {
+                        "description": "ReferencingCount",
+                        "type": "integer"
+                    },
+                    "ReferencedEntities": {
+                        "description": "ReferencedEntities",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ReferencedEntitiesList"
+                        }
+                    },
+                    "Database": {
+                        "description": "Database",
+                        "type": "string"
+                    },
+                    "Schema": {
+                        "description": "Schema",
+                        "type": "string"
+                    },
+                    "IsSelected": {
+                        "description": "Is Selected",
+                        "type": "integer"
+                    },
+                    "IsUpdated": {
+                        "description": "Is Updated",
+                        "type": "integer"
+                    },
+                    "Depth": {
+                        "description": "Depth",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ReferencedEntitiesResponse": {
+                "required": [
+                    "ReferencedEntities"
+                ],
+                "type": "object",
+                "properties": {
+                    "ReferencedEntities": {
+                        "description": "Referenced Entities",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ReferencedEntitiesList"
+                        }
+                    },
+                    "Customer": {
+                        "description": "Customer",
+                        "type": "string"
+                    },
+                    "Project": {
+                        "description": "Project",
+                        "type": "string"
+                    },
+                    "ECRNumber": {
+                        "description": "ECR Number",
+                        "type": "string"
+                    },
+                    "Component": {
+                        "description": "Component",
+                        "type": "string"
+                    },
+                    "Activity": {
+                        "description": "Activity",
+                        "type": "string"
+                    },
+                    "UI": {
+                        "description": "UI",
+                        "type": "string"
+                    },
+                    "Task": {
+                        "description": "Task",
+                        "type": "string"
+                    },
+                    "AppServer": {
+                        "description": "App Server",
+                        "type": "string"
+                    }
+                },
+                "x-schemarequired": false
+            },
+            "ReferencingEntitiesResponse": {
+                "required": [
+                    "ReferencingEntities"
+                ],
+                "type": "object",
+                "properties": {
+                    "ReferencingEntities": {
+                        "description": "Referencing Entities",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ReferencingEntitiesList"
+                        }
+                    }
+                },
+                "x-schemarequired": false
+            },
+            "ReferencedEntitiesRequest": {
+                "description": "ProcedureList",
+                "required": [
+                    "Procedures"
+                ],
+                "type": "object",
+                "properties": {
+                    "DisplayOption": {
+                        "description": "Display Option",
+                        "type": "string"
+                    },
+                    "Procedures": {
+                        "description": "Procedure Name",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Procedures"
+                        }
+                    }
+                },
+                "x-schemarequired": false
+            },
+            "Procedures": {
+                "description": "Procedures",
+                "type": "object",
+                "properties": {
+                    "ProcedureName": {
+                        "description": "ProcedureName",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "Error400": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/apierrors"
+                        }
+                    }
+                },
+                "description": "BAD DATA"
+            },
+            "Error500": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/apierror"
+                        }
+                    }
+                },
+                "description": "INVALID REQUEST"
+            }
+        },
+        "securitySchemes": {
+            "core_rids": {
+                "flows": {
+                    "implicit": {
+                        "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+                        "scopes": {
+                            "rvw_impersonate": "User impersonation scope"
+                        }
+                    },
+                    "clientCredentials": {
+                        "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+                        "scopes": {
+                            "rvw_nonimpersonate": "Service impersonation scope"
+                        }
+                    },
+                    "authorizationCode": {
+                        "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+                        "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+                        "refreshUrl": "https://www.ramco.com/rvw",
+                        "scopes": {
+                            "rvw_anonymous": "User impersonation scope"
+                        }
+                    }
+                },
+                "type": "oauth2",
+                "description": "Authorization header using the Bearer scheme. Example: \\\"Authorization: Bearer {token}\\\""
+            }
+        }
+    }
+}

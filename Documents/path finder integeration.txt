@@ -1,0 +1,18 @@
+1.	To share api postman collection for	return 
+		- list of customers
+		- list of projects for a given customer
+		- list of processes for a given customer, project
+		- list of componets for a given customer, project, process
+		- list of documents for a given customer, project, process, component
+		- list of activities for a given customer, project, process, component, docno
+		- list of ilbos for a given customer, project, process, component, docno, activity
+=========================================================================================
+1.	GET	-	To return list of task for a given process, component, ecrno, activity, ilbo
+
+2.	POST -	To return list of task for a given	(for scenario coverage)	- 
+				documentstatus - base, latest_published
+				array of process, 
+				array of component,
+				array of activity,
+				array of ilbo
+=======================================================================================

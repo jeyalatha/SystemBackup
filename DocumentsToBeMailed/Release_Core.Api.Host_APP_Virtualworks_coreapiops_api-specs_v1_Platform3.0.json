@@ -1,0 +1,1650 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Platform",
+    "description": "List of APIs for the Platform",
+    "version": "1",
+    "x-processname": "Engineering",
+    "x-componentname": "DesignEngineering",
+    "x-componentnamealias": "DesignEngineering",
+    "x-specid": 7,
+    "x-specname": "Platform",
+    "x-specdate": "2023-08-29T09:41:52.0800000",
+    "x-specversion": 1,
+    "x-includeprocessinroute": true,
+    "x-includecomponentinroute": true
+  },
+  "paths": {
+    "/platform/bpctask": {
+      "summary": "To Get the Task Information for the given Process, Component , Activity and ILBO. It is used for Review Dashboard.",
+      "description": "To Get the Task Information for the given Process, Component , Activity and ILBO. It is used for Review Dashboard.",
+      "post": {
+        "summary": "To Get the Task Information for the given Process, Component , Activity and ILBO. It has been given as POST method since the inputs can be given in array format. It is used for Test scenario coverage in Review Dashboard. ",
+        "description": "To Get the Task Information for the given Process, Component , Activity and ILBO. It has been given as POST method since the inputs can be given in array format. It is used for Test scenario coverage in Review Dashboard.",
+        "operationId": "GetBPCTask",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BPCTaskList"
+                },
+                "x-schemcategory": "PRQ",
+                "x-schemarequired": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Task Service Information retrieved Successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BPCTaskServiceList"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationservicemap": {
+          "ServiceMapInfo": {
+            "ServiceID": 40,
+            "ComponentName": "DesignEngineering",
+            "ServiceName": "PlfApiPostTaskListForBPCSr",
+            "ServiceVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Bpctaskservicelist>",
+          "RequestBindings": {
+            "1": {
+              "RequestBind": {
+                "DisplaySchemaType": "Bpctasklist",
+                "ForLoopRequired": false,
+                "SchemaVariable": "lstbpctasklist",
+                "SchemaHierarchy": "",
+                "SegmentName": "_plf_taskml"
+              },
+              "RequestBindProperties": [
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ActivityDesc",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "activitydesc",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ActivityName",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "activityname",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ComponentDesc",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "componentdesc",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ComponentName",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "componentname",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ILBODesc",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "ilbodesc",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ILBOName",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "ilboname",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ProcessDesc",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "processdesc",
+                  "SchemaCategory": "C"
+                },
+                {
+                  "BindID": "1",
+                  "SchemaName": "Bpctasklist",
+                  "PropertyName": "ProcessName",
+                  "SchemaVariable": "lstbpctasklist",
+                  "SegmentName": "_plf_taskml",
+                  "SegmentInstance": 0,
+                  "DataItemName": "processname",
+                  "SchemaCategory": "C"
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Bpctaskservicelist",
+                "IsMultiSegment": false,
+                "SchemaVariable": "res_getbpctask",
+                "SegmentHierachy": "_plf_taskmlout",
+                "SegmentName": "_plf_taskmlout"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ActivityDesc",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "activitydesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ActivityName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "activityname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ComponentDesc",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "componentdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ComponentName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "componentname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ILBODesc",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "ilbodesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ILBOName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "ilboname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ProcessDesc",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "processdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ProcessName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "processname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "ServiceName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "servicename"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "TaskDesc",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "taskdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Bpctaskservicelist",
+                  "DataType": "String",
+                  "PropertyName": "TaskName",
+                  "SegmentName": "_plf_taskmlout",
+                  "SegmentInstance": 0,
+                  "DataItemName": "taskname"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/platform/ilbotask": {
+      "summary": "To get the Task information for the given customer, project, process, component, activity and an ilbo. It is used for Review Dashboard.",
+      "description": "To get the Task information for the given customer, project, process, component, activity and an ilbo. It is used for Review Dashboard.",
+      "get": {
+        "summary": "To get the Task information for the given customer, project, process, component, activity and an ilbo. It is used for Review Dashboard.",
+        "description": "To get the Task information for the given customer, project, process, component, activity and an ilbo. It is used for Review Dashboard.",
+        "operationId": "GetIlboTask",
+        "parameters": [
+          {
+            "name": "ActivityDesc",
+            "in": "query",
+            "description": "Activity Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ActivityName",
+            "in": "query",
+            "description": "Activity Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ComponentDesc",
+            "in": "query",
+            "description": "Component Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ComponentName",
+            "in": "query",
+            "description": "Component Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "CustomerName",
+            "in": "query",
+            "description": "Customer Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "Docno",
+            "in": "query",
+            "description": "Document Number",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "IlboDesc",
+            "in": "query",
+            "description": "Ilbo Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "IlboName",
+            "in": "query",
+            "description": "Ilbo Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ProcessDesc",
+            "in": "query",
+            "description": "Process Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ProcessName",
+            "in": "query",
+            "description": "Process Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ProjectName",
+            "in": "query",
+            "description": "Project Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task Informations retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ILBOTaskList"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationmethodmap": {
+          "MethodMapInfo": {
+            "MethodID": 41,
+            "ComponentName": "DesignEngineering",
+            "MethodName": "PlfApi_GetTaskListForILBO_Mt",
+            "MethodVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Ilbotasklist>",
+          "ParameterMappings": {
+            "PlfApi_GetTaskListForILBO_Mt_in": {
+              "ParameterMapInfo": [
+                {
+                  "ApiParameterName": "ActivityDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ActivityName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ComponentDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ComponentName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "CustomerName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "Docno",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "IlboDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "IlboName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ProcessDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ProcessName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ProjectName",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Ilbotasklist",
+                "IsMultiOut": false,
+                "SchemaVariable": "res_getilbotask",
+                "ModelName": "_rset"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Ilbotasklist",
+                  "DataType": "String",
+                  "PropertyName": "TaskDesc",
+                  "ModelName": "_rset",
+                  "MethodParameterName": "taskdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Ilbotasklist",
+                  "DataType": "String",
+                  "PropertyName": "TaskName",
+                  "ModelName": "_rset",
+                  "MethodParameterName": "taskname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Ilbotasklist",
+                  "DataType": "String",
+                  "PropertyName": "TaskType",
+                  "ModelName": "_rset",
+                  "MethodParameterName": "tasktype"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": false
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/platform/sp_task": {
+      "summary": "Method to get the TaskName and Service Name for the given SP. It is used for Dependency Viewer.",
+      "description": "Method to get the TaskName and Service Name for the given SP. It is used for Dependency Viewer.",
+      "get": {
+        "summary": "Method to get the TaskName and Service Name for the given SP. It is used for Dependency Viewer.",
+        "description": "Method to get the TaskName and Service Name for the given SP. It is used for Dependency Viewer.",
+        "operationId": "ListOfSpTasks",
+        "parameters": [
+          {
+            "name": "procedureName",
+            "in": "query",
+            "description": "Procedure Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SP Task Fetched Successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TasksList"
+                  },
+                  "x-schemcategory": "PRS",
+                  "x-schemarequired": false
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationmethodmap": {
+          "MethodMapInfo": {
+            "MethodID": 14,
+            "ComponentName": "DesignEngineering",
+            "MethodName": "PlfApi_PostSPListForTask_Mt",
+            "MethodVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "List<Taskslist>",
+          "ParameterMappings": {
+            "PlfApi_PostSPListForTask_Mt_in": {
+              "ParameterMapInfo": [
+                {
+                  "ApiParameterName": "procedureName",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Taskslist",
+                "IsMultiOut": false,
+                "SchemaVariable": "res_listofsptasks",
+                "ModelName": "_rs1"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ActivityDesc",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "activitydesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ActivityName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "activityname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ComponentDesc",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "componentdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ComponentName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "componentname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "IsIntegerationService",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "isintegerationservice"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ProcedureName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "procedurename"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ServiceName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "servicename"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "ServiceType",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "servicetype"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "TaskDesc",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "taskdesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "TaskName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "taskname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "UIDesc",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "uidesc"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Taskslist",
+                  "DataType": "String",
+                  "PropertyName": "UIName",
+                  "ModelName": "_rs1",
+                  "MethodParameterName": "uiname"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": false
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "procedureName",
+          "in": "query",
+          "description": "Procedure Name",
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    },
+    "/platform/task": {
+      "summary": "To Get the stored procedures for the given Task or Service. Request parameter controlFileName can be ignored. It is used for Dependency Viewer.",
+      "description": "To Get the stored procedures for the given Task or Service. Request parameter controlFileName can be ignored. It is used for Dependency Viewer.",
+      "get": {
+        "summary": "To Get the stored procedures for the given Task or Service. Request parameter controlFileName can be ignored. It is used for Dependency Viewer.",
+        "description": "To Get the stored procedures for the given Task or Service. Request parameter controlFileName can be ignored. It is used for Dependency Viewer.",
+        "operationId": "GetSPsforControlTask",
+        "parameters": [
+          {
+            "name": "activityDesc",
+            "in": "query",
+            "description": "Activity Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "activityName",
+            "in": "query",
+            "description": "Actvity Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "appServer",
+            "in": "query",
+            "description": "AppServer",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "appVersion",
+            "in": "query",
+            "description": "App Version",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "componentDesc",
+            "in": "query",
+            "description": "Component Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "componentName",
+            "in": "query",
+            "description": "Component Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "controlFileName",
+            "in": "query",
+            "description": "Control File Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "controlValue",
+            "in": "query",
+            "description": "Control Value",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "customerName",
+            "in": "query",
+            "description": "Customer Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "ecrNumber",
+            "in": "query",
+            "description": "ECR Number",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "processDesc",
+            "in": "query",
+            "description": "Process Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "processName",
+            "in": "query",
+            "description": "Process Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "projectName",
+            "in": "query",
+            "description": "Project Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "rtVersion",
+            "in": "query",
+            "description": "RT Version",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "serviceName",
+            "in": "query",
+            "description": "Service Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "stepAction",
+            "in": "query",
+            "description": "Step Action",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "taskName",
+            "in": "query",
+            "description": "Task Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "uiDesc",
+            "in": "query",
+            "description": "UI Description",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          },
+          {
+            "name": "uiName",
+            "in": "query",
+            "description": "UI Name",
+            "schema": {
+              "type": "string",
+              "x-schemarequired": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Stored Procedure(s) retrived Successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          }
+        },
+        "x-IsCustomCode": false,
+        "x-apipathoperationmethodmap": {
+          "MethodMapInfo": {
+            "MethodID": 15,
+            "ComponentName": "DesignEngineering",
+            "MethodName": "PlfApi_GetSPListForTask_Mt",
+            "MethodVersion": 1
+          },
+          "RequestBind": { },
+          "ResponseSchemaType": "Responseschema",
+          "ParameterMappings": {
+            "PlfApi_GetSPListForTask_Mt_in": {
+              "ParameterMapInfo": [
+                {
+                  "ApiParameterName": "activityDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "activityName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "appServer",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "appVersion",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "componentDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "componentName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "controlFileName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "controlValue",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "customerName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "ecrNumber",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "processDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "processName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "projectName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "rtVersion",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "serviceName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "stepAction",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "taskName",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "uiDesc",
+                  "IsRequired": false
+                },
+                {
+                  "ApiParameterName": "uiName",
+                  "IsRequired": false
+                }
+              ]
+            }
+          },
+          "ResponseMappings": {
+            "actionResponse1": {
+              "ResponseMap": {
+                "MapID": "actionResponse1",
+                "DisplaySchemaType": "Responseschema",
+                "IsMultiOut": false,
+                "SchemaVariable": "responseschema",
+                "ModelName": "hdrrs"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ActivityDescription",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "activitydescription"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ActivityName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "activityname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "AppServer",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "appserver"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ComponentDescription",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "componentdescription"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ComponentName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "componentname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "CustomerName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "customername"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ECRNumber",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "ecrnumber"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "FeatureID",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "featureid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ProcessDescription",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "processdescription"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ProcessName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "processname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "ProjectName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "projectname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "RTrackID",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "rtrackid"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "TaskName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "taskname"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "UIDescription",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "uidescription"
+                },
+                {
+                  "MapID": "actionResponse1",
+                  "SchemaName": "Responseschema",
+                  "DataType": "String",
+                  "PropertyName": "UIName",
+                  "ModelName": "hdrrs",
+                  "MethodParameterName": "uiname"
+                }
+              ]
+            },
+            "actionResponse2": {
+              "ResponseMap": {
+                "MapID": "actionResponse2",
+                "SchemaHierarchy": "Responseschema",
+                "DisplaySchemaType": "Procedureslist",
+                "IsMultiOut": false,
+                "SchemaVariable": "responseschema.Procedures",
+                "ModelName": "_mlrs"
+              },
+              "ResponseMapProperties": [
+                {
+                  "MapID": "actionResponse2",
+                  "SchemaName": "Procedureslist",
+                  "DataType": "String",
+                  "PropertyName": "ProcedureName",
+                  "ModelName": "_mlrs",
+                  "MethodParameterName": "procedurename"
+                }
+              ]
+            }
+          }
+        },
+        "x-ispaginationenabled": false
+      },
+      "parameters": [
+        {
+          "name": "context-lang-id",
+          "in": "header",
+          "description": "Language Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-ou-id",
+          "in": "header",
+          "description": "Orgnz Id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        },
+        {
+          "name": "context-role-name",
+          "in": "header",
+          "description": "Role Id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "x-schemcategory": "PP",
+            "x-schemarequired": false
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "apierror": {
+        "type": "object",
+        "properties": {
+          "seqNo": {
+            "type": "integer",
+            "description": "Error Sequence Number",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Error ID",
+            "format": "int32"
+          },
+          "source": {
+            "type": "string",
+            "description": "Error Source"
+          },
+          "description": {
+            "type": "string",
+            "description": "Error Description"
+          },
+          "correctiveAction": {
+            "type": "string",
+            "description": "Error CorrectiveAction"
+          }
+        },
+        "description": "Error Object",
+        "x-schemarequired": false
+      },
+      "BPCTaskList": {
+        "type": "object",
+        "properties": {
+          "ActivityDesc": {
+            "type": "string",
+            "description": "Activity Description"
+          },
+          "ActivityName": {
+            "type": "string",
+            "description": "Activity Name"
+          },
+          "ComponentDesc": {
+            "type": "string",
+            "description": "Component Description"
+          },
+          "ComponentName": {
+            "type": "string",
+            "description": "Component Name"
+          },
+          "ILBODesc": {
+            "type": "string",
+            "description": "ILBO Description"
+          },
+          "ILBOName": {
+            "type": "string",
+            "description": "ILBO Name"
+          },
+          "ProcessDesc": {
+            "type": "string",
+            "description": "Process Description"
+          },
+          "ProcessName": {
+            "type": "string",
+            "description": "Process Name"
+          }
+        },
+        "description": "BPCTaskList",
+        "x-schemarequired": false
+      },
+      "BPCTaskServiceList": {
+        "type": "object",
+        "properties": {
+          "ActivityDesc": {
+            "type": "string",
+            "description": "Activity Description"
+          },
+          "ActivityName": {
+            "type": "string",
+            "description": "Activity Name"
+          },
+          "ComponentDesc": {
+            "type": "string",
+            "description": "Component Description"
+          },
+          "ComponentName": {
+            "type": "string",
+            "description": "Component Name"
+          },
+          "ILBODesc": {
+            "type": "string",
+            "description": "ILBO Description"
+          },
+          "ILBOName": {
+            "type": "string",
+            "description": "ILBO Name"
+          },
+          "ProcessDesc": {
+            "type": "string",
+            "description": "Process Description"
+          },
+          "ProcessName": {
+            "type": "string",
+            "description": "Process Name"
+          },
+          "ServiceName": {
+            "type": "string",
+            "description": "Service Name"
+          },
+          "TaskDesc": {
+            "type": "string",
+            "description": "Task Description"
+          },
+          "TaskName": {
+            "type": "string",
+            "description": "Task Name"
+          }
+        },
+        "description": "BPCTaskServiceList",
+        "x-schemarequired": false
+      },
+      "ILBOTaskList": {
+        "type": "object",
+        "properties": {
+          "TaskDesc": {
+            "type": "string",
+            "description": "Task Description"
+          },
+          "TaskName": {
+            "type": "string",
+            "description": "Task Name"
+          },
+          "TaskType": {
+            "type": "string",
+            "description": "Task Type"
+          }
+        },
+        "description": "ILBO Task List",
+        "x-schemarequired": false
+      },
+      "ProcedureList": {
+        "type": "object",
+        "properties": {
+          "ProcedureName": {
+            "type": "string",
+            "description": "Procedure Name"
+          }
+        },
+        "description": "Procedure List",
+        "x-schemarequired": false
+      },
+      "ProceduresList": {
+        "type": "object",
+        "properties": {
+          "ProcedureName": {
+            "type": "string",
+            "description": "Procedure Name"
+          }
+        },
+        "description": "Procedures",
+        "x-schemarequired": false
+      },
+      "ResponseSchema": {
+        "type": "object",
+        "properties": {
+          "ActivityDescription": {
+            "type": "string",
+            "description": "Activity Description"
+          },
+          "ActivityName": {
+            "type": "string",
+            "description": "Activity Name"
+          },
+          "AppServer": {
+            "type": "string",
+            "description": "App Server"
+          },
+          "ComponentDescription": {
+            "type": "string",
+            "description": "ComponentDescription"
+          },
+          "ComponentName": {
+            "type": "string",
+            "description": "Component Name"
+          },
+          "CustomerName": {
+            "type": "string",
+            "description": "CustomerName"
+          },
+          "ECRNumber": {
+            "type": "string",
+            "description": "ECR Number"
+          },
+          "FeatureID": {
+            "type": "string",
+            "description": "Feature ID"
+          },
+          "ProcessDescription": {
+            "type": "string",
+            "description": "Process Description"
+          },
+          "ProcessName": {
+            "type": "string",
+            "description": "Process Name"
+          },
+          "ProjectName": {
+            "type": "string",
+            "description": "Project Name"
+          },
+          "RTrackID": {
+            "type": "string",
+            "description": "rTrack ID"
+          },
+          "TaskName": {
+            "type": "string",
+            "description": "Task Name"
+          },
+          "UIDescription": {
+            "type": "string",
+            "description": "UI Description"
+          },
+          "UIName": {
+            "type": "string",
+            "description": "UI Name"
+          },
+          "Procedures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProceduresList"
+            },
+            "description": "Procedures"
+          }
+        },
+        "x-schemarequired": false
+      },
+      "TasksList": {
+        "type": "object",
+        "properties": {
+          "ActivityDesc": {
+            "type": "string",
+            "description": "Activity Desc"
+          },
+          "ActivityName": {
+            "type": "string",
+            "description": "Activity Name"
+          },
+          "ComponentDesc": {
+            "type": "string",
+            "description": "Component Desc"
+          },
+          "ComponentName": {
+            "type": "string",
+            "description": "Component Name"
+          },
+          "IsIntegerationService": {
+            "type": "string",
+            "description": "Is Integeration Service"
+          },
+          "ProcedureName": {
+            "type": "string",
+            "description": "Procedure Name"
+          },
+          "ServiceName": {
+            "type": "string",
+            "description": "Service Name"
+          },
+          "ServiceType": {
+            "type": "string",
+            "description": "Service Type"
+          },
+          "TaskDesc": {
+            "type": "string",
+            "description": "Task Desc"
+          },
+          "TaskName": {
+            "type": "string",
+            "description": "TaskName"
+          },
+          "UIDesc": {
+            "type": "string",
+            "description": "UI Desc"
+          },
+          "UIName": {
+            "type": "string",
+            "description": "UI Name"
+          }
+        },
+        "x-schemarequired": false
+      },
+      "apierrors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/apierror"
+        },
+        "description": "List of Error Object",
+        "x-schemarequired": false
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "BAD DATA",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierrors"
+            }
+          }
+        }
+      },
+      "Error500": {
+        "description": "INVALID REQUEST",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apierror"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "core_rids": {
+        "type": "oauth2",
+        "description": "Authorization header using the Bearer scheme. Example: \\\"Authorization: Bearer {token}\\\"",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "scopes": {
+              "rvw_impersonate": "User impersonation scope"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "scopes": {
+              "rvw_nonimpersonate": "Service impersonation scope"
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/authorize",
+            "tokenUrl": "https://rvwpoc20.ramco.com/coresecurityops/connect/token",
+            "refreshUrl": "https://www.ramco.com/rvw",
+            "scopes": {
+              "rvw_anonymous": "User impersonation scope"
+            }
+          }
+        }
+      }
+    }
+  }
+}

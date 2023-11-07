@@ -1,0 +1,50 @@
+<VWRules>
+  <Templates>
+    <Template name="department_state" type="4">
+      <Control name="txtaddress">
+        <SetProperty type="Control" name="sv" value="y" />
+        <SetProperty type="Control" name="se" value="y" />
+      </Control>
+    </Template>
+    <Template name="fetch_state" type="4">
+      <Control name="txtaddress">
+        <SetProperty type="Control" name="sv" value="n" />
+        <SetProperty type="Control" name="se" value="y" />
+      </Control>
+      <LayoutControl name="employee">
+        <SetProperty type="Control" name="sv" value="y" />
+        <SetProperty type="Control" name="se" value="y" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+      <LayoutControl name="personaldetails">
+        <SetProperty type="Control" name="sv" value="n" />
+        <SetProperty type="Control" name="se" value="n" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+    </Template>
+    <Template name="emp_state" type="4">
+      <LayoutControl name="employee">
+        <SetProperty type="Control" name="sv" value="y" />
+        <SetProperty type="Control" name="se" value="y" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+      <LayoutControl name="personaldetails">
+        <SetProperty type="Control" name="sv" value="n" />
+        <SetProperty type="Control" name="se" value="n" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+    </Template>
+    <Template name="personal_state" type="4">
+      <LayoutControl name="employee">
+        <SetProperty type="Control" name="sv" value="n" />
+        <SetProperty type="Control" name="se" value="n" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+      <LayoutControl name="personaldetails">
+        <SetProperty type="Control" name="sv" value="y" />
+        <SetProperty type="Control" name="se" value="y" />
+        <SetProperty type="Control" name="sc" value="n" />
+      </LayoutControl>
+    </Template>
+  </Templates>
+</VWRules>
