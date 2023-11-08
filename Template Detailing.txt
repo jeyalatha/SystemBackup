@@ -1,0 +1,68 @@
+1. Get Templates   -- generate service () -- hdrsave & hdrref methods
+=============
+	Input :
+		Customer
+		Proje
+	Output
+	========
+	Template ID		-	System Generated	-	Unique
+	Template Name	-	User Defined		
+	
+2. Get Template By ID -- manual service refer import json button.
+=============
+Method 1. achhdrsrgettplid -- just refer	
+method 2 :
+	Input
+	=======
+	Template ID   60
+	
+	Output
+	========
+	timeoffxml.xml nvarchar(max)
+	
+	
+3. Save Template  manual service refer import json button.
+=============
+Method 1. achhdrsrsavtpl -- just refer	
+second method:
+	Input
+	=======
+	Template ID 60 
+	timeoffxml.xml nvarchar(max)
+	
+	Output   recordset 
+	=======  
+	ErrorID
+	ErrorDescription
+	CorrectiveAction
+	Severity 
+	
+
+Design template change :
+
+Controls
+==========
+Customer Name		-	Displayonly  (ep_tpl_cust)
+Project Name		-	Displayonly  (ep_tpl_proj)
+Template ID			-	Edit Controls (ep_tpl_tplid)
+Template Name		-	Edit Controls (ep_tpl_tplname) 100
+Template Content	-	Text Area (Nvarchar(max)) (ep_tpl_content)
+
+Template Listing	-	ML Control - (10000) Visible Rows (ep_tpl_grid)
+						Template ID  (ep_tpl_ml_tplid) disp
+						Template Name (ep_tpl_ml_tplname) disp 
+						Template Title (ep_tpl_ml_tpltitle) disp
+						
+Error Message		-	ML Control - Error Listing (ep_tpl_err_grid)
+						Error ID (ep_tpl_errorid) disp 
+						Severity (ep_tpl_severity) disp 
+						Error Desc (ep_tpl_errordesc) dis 
+						Corrective Action (ep_tpl_correctiveaction) disp
+
+Get Template		-	Button  (ep_tpl_gettpl)
+Get Template By ID	-	Button	-	Manual Design (Type basd BRO)	-	(ep_tpl_gettpl_byid)
+Save Template		-	Button	-	Manual Design (Type basd BRO)	-	(ep_tpl_save)
+
+
+Get Template By ID	-	Button	-	Manual Design (Type basd BRO)	-	WS Table
+Save Template		-	Button	-	Manual Design (Type basd BRO)	-	Multiple Record Set SP

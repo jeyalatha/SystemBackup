@@ -1,58 +1,41 @@
-Deepika -- Chips issue Done 
-Ganesh --Irule state issue Pending
-Madhan - one more column in last resultset Done 
-Rams - Handle changes object Done
+Apr :
+====
+1. Post and Pre Tasks for Attachment controls - TECH-68066
+2. Provision to specify PSR, PMR, PSMR in refine service in design engineering	
+ and design service in design refinements. - TECH-68064
+3.  Bulk Download - Provision to download all the attachments as bulk in Grid Control - TECH-68067
+4.  followup task in import schema
+5. Provision to map captions for control, column, section and Page in gql 
+engineering - TECH-68063
 
+May:
 
-Base control type : Grid 	RenderAS
-			Is Tag 				Tag
-			Is Chips			Chipos ?
-			
-			
-Runtime & state xml to sampath
-Saravanan mail for state xml
-Caption cannot be changed message
+Bubble Error:
 
-Download ECR    -    Default customer project issue
-Request for code generation 
-    Default customer project issue
-    Option and Java Options to be hidden
-    Tab height
-    Code gen completion mail
+Design Service Change:
+	Design service, add one more column on grid 'Bubble Message' as checkbox
+	Add one column in de_fw_Des_service table. 
 
-
-
-"Metadata clean-up for service definition - 
-Processing type – Regular/batch?
-Cached
-Zipped??
-ClearKeyPattern"
-Provision to import UDS client query JSON into platform model
-C85 - Design Follow Up Task - content is not correct 
-
-
-
-
-Adding rTrackID & FeatureID in Publish ECR & Initiate Codegen
-UDS for Client Query
-Release
-Template Master screen in Platform
-
-
-19 Apr 23:
-----------
-Web codegen in tech56 - Done
-Generate service error in tech56 -- Done 
-Viewname change bcaz of grid column sequence change - Done
-	- this impact in listedit definition - list edit not printed in actiivty  source code 
-Grid column seq - changed to numeric should be reverted -- Done 
-Column grouping seq - changed to numeric should be reverted -- Done
+	Validation for Process section rule tabs:
+	1. SP error protocol for all the methods  should be multiple record set.
+	2. all the methods should have ctxt_validation as IN parameter
 	
+Pattern BAsed generation:
 
-caption required is not saving - getting saved properly in all other environments  -- Check 
-By default apply refinements checkbox should not be selected -- Done
-validation should be raised for mailid if initiate code gen is selected -- Done 
+Add one more attribute 'Bubble Error Message' for all the action patterns
+sperrorprotocol value in the table de_fw_des_sp is 2 (Multiple record set)
+m_errorid should not be printed as out parameter 
+ctxt_validation will be added as new IN Paramter
+For raise error, errorid should be 60000 is information message. 
+	other than 60000, it will be rollback
+	
+Mar: 	
+	
+  POC for embedding graphql voyager (visually representing GraphQL schema) in manage taskSystem
 
-customer & project in publish ECR - working
-Implement process only selected rows option in Publish ECR UI
-Deployment meta data generation to be defaulted during Auto initiate code gen
+ populate hidden controls for filtering capabilities in Gantt, Scheduler and Calendar done
+ 
+Manage GQL Queries -- Filtering as second level query & display the arguments, input fields in tree structure.
+
+
+

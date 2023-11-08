@@ -1,0 +1,25 @@
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "E:\git\platform\Latest\design-time\" -TargetDir "E:\PlatformEnhancements\2022\GitExtraction08Dec\" -FromDate "2022-12-01 00:00:00" -ToDate "2022-12-07 24:00:00"
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "E:\git\platform\Latest\design-time\" -TargetDir "E:\PlatformEnhancements\2022\GitExtraction08Dec1\" -FromDate "2022-12-08 00:00:00" -ToDate "2022-12-08 24:00:00"
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "E:\git\platform\Latest\design-time\" -TargetDir "E:\PlatformEnhancements\2022\GitExtraction01Dec\" -FromDate "2022-12-07 00:00:00" -ToDate "2022-12-08 24:00:00"
+
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "E:\git\platform\Latest\support-tools\" -TargetDir "E:\PlatformEnhancements\2022\GitExtraction01Dec\" -FromDate "2022-12-05 00:00:00" -ToDate "2022-12-08 24:00:00"
+
+01 - 08
+
+C1
+	UI1 	
+		Syn1		BT1		PT1(10,2)
+		Syn2		BTChar	60	
+				
+		
+C2
+	UI2 
+		Syn1 		BT2		PT2
+		Syn2		BTChar/A(60)
+		BTChar
+		PT1 -> (10,2)
+		
+		
+		BT Name, Precision Name -- Can be duplicated for Customer/ Project. but data type and 
+		data length should be same
+		

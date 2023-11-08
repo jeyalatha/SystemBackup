@@ -7,29 +7,8 @@ Slide 7, 17
 
 Scripts to rollback component level ECR to any previous ECR - Done
 Platform modeling provision to allow listedit controls to select values from allowed list values only -- Test screen
-	impact -- json need to be regenerated and Latest hub is required.
-				json attribute is "forceDataSelection": true
-				
 Button Style is applicable for display only,  datahyperlink
 Mobility Changes
-Toolbar
-Sidebar
-Tools for section Title
-Minimized rows for section
-radio & Enum
-
-(i)	Label
-(ii)	DataHyperLink
-(iii)	Combo
-(iv)	Button
-(v)	CheckBox
-(vi)	Edit/DisplayOnly
-(vii)	RadioButton
-(viii)	ListView
-(ix)	Link
-(x)	Assorted
-(xi)	ListEdit
-
 
 06 July:
 
@@ -45,12 +24,13 @@ iRule DB objects in rvw20appdb
 
 Test UI for :
 ==============
-Attachment pre , Post - TXTSUPPLIERDOCUMENT,  MLSUPDOC (MLGRID)
-Browse pre & post - TXTINVOICEDOCUMENT, MLINVOICEDOC (MLGRID)
-Delete pre & post - TXTGUIDELINES, MLGUIDELINES (MLGRID)
-Filesize, Filetype with associate controls -- TXTPOLICY
-
-Button Style for Display only & Datahyerlink - By default it will be green button
+Attachment pre , Post
+Browse pre & post
+Delete pre & post
+Filesize, Filetype with associate controls
+Validation: Filesize & Filetype controls type should be associated with Attachment enabled controls.
+	Applicable for grid columns also ?
+Button Style for Display only & Datahyerlink
 SelectOnlyListValues for List edit - in edit controls
 	
 06 Jul:
@@ -60,8 +40,6 @@ Rollback
 single installer in tech17
 Aviation bubble message - Pending
 
-base	BASE	FPT_WRQ_00148	LINEMAINTENANCE	BasFPtn	ManageTrips	ManageTrip
-base	BASE	FPT_ECR_00174	LINEMAINTENANCE	BasFPtn	TRQ_MFR_Fetinteg_ser	TRQ_MFR_Fetinteg_elastic_Ps
 
 13 July:
 Test Screen for Toolbar
@@ -91,49 +69,8 @@ Tools -- icon class& custom class
 Side bar - icon class & control class
 
 
-27th Jul:
-=========
-Testui XML Review
-ES how to say to Training
-Training Needs
-Jeya Latha K13:53
 
-
-
-28th Jul:
-Mobility issue 
-	Pagination task not generated
-	Controls shud be created for islist option also
-	XML change for mobilegrid as controltype
-	
-Merge with this month release
-
-29th Jul:
-
-Tools & Customaction -- XML change
-Training qtn prepartion
-Mobility chages:
-=============
-Pagination metadata removal
-Grid contents save 
-Control type save
-SEction layout save 
-SEction layout save  validation for islist & ismobile
-format save  validation for islist & ismobile
-Multi select for list save 
-
-Available icon class
-
-tech-trailbar1
-tech-refresh2
-tech-rdocs
-tech-setting
-
-
- [29-07 10:30] Priyadharshini U
-/5077/PlatformEnhancements/ForGIT
-
-
+ 
  
  
  

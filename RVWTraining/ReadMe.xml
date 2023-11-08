@@ -1,0 +1,45 @@
+Create a control type with base control type 'Datahyperlink' and select the attribute 'Meta data based link'.
+
+Map this control type to a grid column. System creates a hidden view naming as 'hdimdl' + columnbtsynonym
+
+Grid fetch method should have this hidden parameter also. Value should be outed in the below format for 
+Hiddenview parameter.
+
+{"tc": "suprat", "ta": "srfunset", "ti": "srfunsetmain", "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+{"tc": "quotation", "ta": "qtnsysadd", "ti": "qtnsysaddmain", "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+
+	tc  - Target Component
+	ta  - Target Activity
+	ti  - Target ILBO
+	tci - Target Controls 
+	cid - Control ID
+	
+	
+	<trqi><scri fc="test_supplierdetails$mladdinfo$1$8" ihsp="0" ivsp="0" TaskType="link"><ci>
+<c n="mladdinfo" vsi="1" cr="1" nsr="0"><id /><sri><r rn="1" sel="1" /><r rn="2" sel="0" />
+<r rn="3" sel="0" /></sri></c></ci></scri></trqi>
+
+'{"tc":"Test2_MDL_Supplier","ta":"Test2_MDL_create","ti":"stateui1","tci":[{"cid":"statecode","vwn":"statecode","v":"s1"}]}''hdimdlstate',   
+{"tc": "suprat", "ta": "srfunset", "ti": "srfunsetmain", "tci":  [{"cid": "rvwrt_lctxt_ou","vwn": "rvwrt_lctxt_ou","v": "2"}]}
+
+
+
+Prw_ECR_00375
+
+Custom BR design
+ACHImpSchSrimport    --service name
+ACHImpSchMtimport    --Cust br Method
+ECR number - ACH_ECR_00077
+
+
+Save  -- > Item Master table (ProductGroup, Itemname, Itemcount)
+			ProductMaster (Branch, ProductGroup, ItemCount, PendingItems)
+			Update Product table -- for ProdA -- itemcount 2 
+			
+			
+Testcomponent.dll
+TestcomponentBR.dll
+
+Templates:
+Combolinks
+Button bar

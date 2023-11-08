@@ -21,10 +21,6 @@ GO
 /**************************************************************************************************/ 
 /* Modified by : Ganesh Prabhu S               Date: 08-Nov-2022  Defect ID: TECH-74318			  */   
 /**************************************************************************************************/ 
-/* Modified by : Jeya Latha K				   Date: 22-Dec-2022  Defect ID: TECH-75956			  */   
-/**************************************************************************************************/ 
-/* Modified by : Ganesh Prabhu S               Date: 09-Feb-2023  Defect ID: TECH-77416			  */   
-/**************************************************************************************************/ 
 CREATE procedure vw_netgen_optionxml_sp  
 @guid    engg_guid,  
 @ecrno    engg_name  
@@ -97,9 +93,9 @@ declare
 @allstyle engg_flag,  
 @testcomplete engg_flag,
 @IsServerSideFileId	engg_flag , ---TECH-66740 
-@removemstdc engg_flag,		--TECH-75956
-	@evolvjsneeded engg_flag,	--TECH-75956
-@selected engg_flag
+@removemstdc engg_flag, 
+@evolvjsneeded engg_flag
+  
   
 --code commented and modified by 11536 to identify glance ui or not   
   
@@ -208,13 +204,13 @@ insert engg_devcon_codegen_comp_metadata
       suffixcolon,gridfilter,ezlookup,labelselect,ReleaseVersion,inlinetab,split,ellipses,reportxml,generatedatejs,  
          typebro,rbtnalign,ipad5,desktopdlv,DeviceConfigPath,iPhone,ellipsesleft,ezeewizard,LayoutControls,RTState,SecondaryLink,ltm,  
       language,Manual_options,depscript_with_actname,extjs6,defaultasnull,mHUB2,
-	  IsServerSideFileId, removemstdc, evolvjsneeded)  ----TECH-66740    --TECH-75956 
+	  IsServerSideFileId, removemstdc, evolvjsneeded)  ----TECH-66740    
 select 'y','n','n','y','n','n','n','n','n','n','n','n','n','n','n','n','n','n','y','n','n','n','n','n','y','n','n','n',  
 'n','n','n','n','n','n','y','n','n','n','n','n','n','n','n','y','n','n','n','n','n','n','n',null,  
 'n','n','n','Left','Controls Beside captions','Both','y','RSGLOBALStyles',null,'n','n','DOTNET','SQL Server',null,'n','n',@ComponentName,'y',null,null,null,null,null,null,  
 'Generic Type','y','y','n',null,null,null,null,null,'y',null,null,null,null,null,null,null,null,null,null,'n','y','y','y',null,'y',  
 null,null,'y','y',null,null,
-	@IsServerSideFileId, null, null	----TECH-66740	--TECH-75956
+	@IsServerSideFileId, null, null	----TECH-66740
 end  
   
   
@@ -264,8 +260,8 @@ end
     @allstyle = isnull(allstyle,''),
     @testcomplete = ISNULL(testcomplete,''),
 	@IsServerSideFileId = ISNULL(IsServerSideFileId,''),			----TECH-66740	  
-	@removemstdc	= ISNULL(removemstdc, ''),	--TECH-75956
-	@evolvjsneeded	= ISNULL(evolvjsneeded, '') --TECH-75956
+	@removemstdc	= ISNULL(removemstdc, ''),
+	@evolvjsneeded	= ISNULL(evolvjsneeded, '')
     from engg_devcon_codegen_comp_metadata (nolock)  
     where ComponentName = @ComponentName  
       
@@ -306,8 +302,8 @@ end
     @allstyle = case when @allstyle='' then isnull(allstyle, '') else @allstyle end,  
     @testcomplete = case when @testcomplete='' then isnull(testcomplete,'') else @testcomplete end,
 	@IsServerSideFileId = case when @IsServerSideFileId = '' then ISNULL(IsServerSideFileId,'') else @IsServerSideFileId end, ---TECH-66740 
-	@removemstdc = case when @removemstdc = '' then ISNULL(removemstdc,'') else @removemstdc end,  ----TECH-75956
-	@evolvjsneeded = case when @evolvjsneeded = '' then ISNULL(evolvjsneeded,'') else @evolvjsneeded end ----TECH-75956
+	@removemstdc = case when @removemstdc = '' then ISNULL(removemstdc,'') else @removemstdc end, 
+	@evolvjsneeded = case when @evolvjsneeded = '' then ISNULL(evolvjsneeded,'') else @evolvjsneeded end
     from engg_devcon_codegen_options (nolock)  
     where guid = @guid   
     end  
@@ -351,8 +347,8 @@ end
     @allstyle = isnull(allstyle,'n'),  
     @testcomplete = isnull(testcomplete,'n'),
 	@IsServerSideFileId = ISNULL(IsServerSideFileId,''),		--TECH-66740 
-	@removemstdc	= ISNULL(@removemstdc,''),	--TECH-75956
-	@evolvjsneeded	= ISNULL(@evolvjsneeded,'') --TECH-75956
+	@removemstdc	= ISNULL(@removemstdc,''),
+	@evolvjsneeded	= ISNULL(@evolvjsneeded,'')
     from engg_devcon_codegen_options (nolock)  
     where guid = @guid  
     end  
@@ -378,52 +374,6 @@ and  ecrno= @ecrno
 if (@RequestID is not null)  
  select @generationpath = 'e:\deliverables\fromnewgenerator' + '\' + @RequestID  
   
- -- Code added for TECH-77416 Starts
-
-
- if not exists (select 'x' from engg_devcon_codegen_comp_metadata
-				where	componentName	=@ComponentName
-				and		mHUB2			='y')
-begin
-			if exists (	select	'x'
-			FROM		#engg_gen_deliverables a (NOLOCK),    
-						de_published_ui b (NOLOCK)    
-			 WHERE		a.CustomerName	= b.Customer_Name    
-			 AND		a.ProjectName	= b.Project_Name    
-			 AND		a.ProcessName	= b.Process_Name    
-			 AND		a.ComponentName = b.Component_Name    
-			 AND		a.EcrNo			= b.ecrno
-			 AND		a.ActivityName  = b.Activity_Name    
-			 AND		a.UIName		= b.UI_Name    
-			 and		isnull(b.DeviceType,'') in ('P','B') )
-
-			begin 
-
-			if exists (	select	'x'
-						from	sys.triggers (nolock)
-						where	name =	'engg_devcon_codegen_comp_metadata_update')
-				begin
-					EXEC('DISABLE TRIGGER engg_devcon_codegen_comp_metadata_update ON engg_devcon_codegen_comp_metadata'); 
-				end
-
-					update	engg_devcon_codegen_comp_metadata
-					set		mHUB2 ='y',desktopdlv='y',ltm='y'
-					WHERE	componentname=@ComponentName
-				
-			if exists (	select	'x'
-						from	sys.triggers (nolock)
-						where	name =	'engg_devcon_codegen_comp_metadata_update')
-				begin
-			
-					EXEC('Enable TRIGGER engg_devcon_codegen_comp_metadata_update ON engg_devcon_codegen_comp_metadata'); 
-				End
-
-			end
-
-End
-
--- Code added for TECH-77416 ends
-
 if @mhub2 = 'y'  
 begin  
  select @desktopdlv = 'y'  
@@ -447,45 +397,27 @@ Select @model = '<model customer="' + @CustomerName + '" project="' + @ProjectNa
    and language is not null)  
   
 begin  
-	create  table #result (langid varchar(5))  
-	declare  @commadelimitedstring xml  
-         
-	create  table #optionresult (languageid varchar(5))  
-	declare  @MappedLanguageforJSON xml  
-
+  create  table #result (langid varchar(5))  
+  declare  @commadelimitedstring xml  
+             
   select  @commadelimitedstring = cast(('<X>'+replace(language,',','</X><X>')+'</X>') as xml)     
   from engg_devcon_codegen_comp_metadata (nolock)  
   where componentname =@componentname  
   
-  select  @MappedLanguageforJSON = cast(('<X>'+replace(language,',','</X><X>')+'</X>') as xml)     
-  from engg_devcon_codegen_options (nolock)  
-  where component_name =@componentname  
-  and isnull(language,'') <> ''
              
   insert #result (langid)  
   select N.value('.', 'varchar(5)')   
   FROM @commadelimitedstring.nodes('X') as T(N)  
-    select * from #result
   
-  select 'tt', @MappedLanguageforJSON
-    insert #optionresult (languageid)  
-  select N.value('.', 'varchar(5)')   
-  FROM @MappedLanguageforJSON.nodes('X') as T(N)  
-  select * from #optionresult
-
-
+  
   select @languages = (select distinct  quick_code as id ,  
-            quick_code_value as [desc] ,
-
-       from #result         a (nolock) ,
+            quick_code_value as [desc]  
+       from #result         a (nolock) ,  
          ep_language_met language (nolock)  
        where  langid = quick_code COLLATE database_default   
        FOR XML AUTO,root('languages'))  
             
-			selected = 'Y'
-
   drop table #result  
-  drop table #optionresult  
 end  
            
 else  
@@ -561,8 +493,8 @@ select @options = '<options>'+'<option rtgif="' + @rtgif + '" />'
 + ' <option reportformat="' + @reportaspx +'" />'   
 + ' <option desktopdlv="' + @desktopdlv +'" />'   
 + ' <option allstyle="' + @allstyle +'" />' 
-+ ' <option removemstdc="' + @removemstdc +'" />'  --TECH-75956
-+ ' <option evolvjsneeded="' + @evolvjsneeded +'" />'  --TECH-75956
++ ' <option removemstdc="' + @removemstdc +'" />' 
++ ' <option evolvjsneeded="' + @evolvjsneeded +'" />' 
 + ' <option isserversidefileid="' + @IsServerSideFileId +'" />'					----TECH-66740
 + '</options>'  
 

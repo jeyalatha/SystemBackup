@@ -1,43 +1,75 @@
-[Tuesday 10:48] Ponmalar A
+•	Custom border for controls and sections
+•	Edit control with multiple actions
+•	Vertical column separators (check only in glance)
+•	Common caption for 2 adjacent controls (check only in Platform) -- discuss
+•	Switch control
 
-1.    Visibility Config for histogram
-2.    Glance issue - associated document handled in fetch doucments
-3.     MDCF, device config path Language - handled in xml
-4. 		Custom border issue - Defect fixing
+https://www.w3schools.com/css/css_border.asp
+
+Platform
+=======
+Caption position – Top Inner
+Response Layout ?? - done forresponsive
+section tab:
+		-- for reponsive -- page layout should be 'Responsive' (ep_ui_page_dtl -- Layout)
+		
+section layout tab:
+		-- for reponsive -- section layout should be 'Responsive' (ep_ui_section_dtl -- Layout)
+
+IF ISNULL(@tmp_taskfor,'') = 'Template'
+				BEGIN
+					SET @tmp_taskname	= ISNULL(@comp_pfx_tmp,'') + ISNULL(@tmp_pageprefix,'') + ISNULL(@tmp_actionprefix,'') + ISNULL(@tmp_tasksuffix,'')
+					SET @tmp_taskname	= ISNULL(@comp_pfx_tmp,'') + ISNULL(@tmp_pageprefix,'') + ISNULL(@tmp_ctrlprefix,'') + ISNULL(@tmp_tasksuffix,'')
+
+				END
+				
+SET @tmp_taskname	= ISNULL(@comp_pfx_tmp,'') + ISNULL(@tmp_pageprefix,'') + ISNULL(@tmp_ctrlprefix,'') + ISNULL(@tmp_customaction_controlprefix,'') + ISNULL(@tmp_tasksuffix,'')
+				
+				
+				
+Border
+	Left, Right, Top, Bottom
+BorderColor
+	Left, Right, Top, Bottom
+Border Width
+Border Style
+Border Radius
+
+	Edit
+	ListEdit
+	DisplayOnly
+	TextArea
+	Numeric
+	Date
+	Time
+	Combo
+	DateTime
+	Container
+	Panel
+	Horizontal/Vertical data view
+
+Edit with multiple actions
+	Edit
+	ListEdit
+	DisplayOnly
+	TextArea
+	Numeric
+	Date
+	Time
+	Combo
+	DateTime
+
+Line - Vertial / Horizontal/ / None
 
 
+REsponsive layout:
+add meta data in layout part
+section tab, add one more column ForResponsive Blank, 1 to 12
+section Layout tab, add one more column ForResponsive Blank, 1 to 12
 
-<<\\ramconas10.ramco\TES\Plfsupport\Tools\Single Installer Packaging\Deliverables\017_REL 2.11.0.0>>
+XML , add one more node as responsivecol = ""
 
-"[
-	{
-		nodeName: 'solutioning',
-		nodeDescription: 'Solutioning Process',
-		nodeType: 'process',
-		nodeInfo: {
-			""Process Description"": ""Solutioning Process"",
-			""Process"": ""Solutioning"",
-			""ECRNo"": ""ACH_ECR_00001"",
-			Project: ""PLF"",
-			Customer: ""Ramco""
-		},
-		children: [{
-			nodeName: 'preview',
-			nodeDescription: 'Engineering Preview',
-			nodeType: 'component',
-			nodeInfo: {
-				""Mapped Function"": ""Preview"",
-				""Component Description"": ""Engineering Preview"",
-				""Component Prefix"": ""Prw"",
-				""Latest Downloaded ECR"": """",
-				""Latest Published ECR"": ""ACH_ECR_00001"",
-				""Component"": ""Preview"",
-				""Process"": ""Solutioning"",
-				""ECRNo"": ""ACH_ECR_00001"",
-				Project: ""PLF"",
-				Customer: ""Ramco""
-			},
-			children: []
-		}]
-	}
-]"
+TestUI :
+Comp: testcomponent
+act: TestEnhance
+ui: TestEnhanceUI

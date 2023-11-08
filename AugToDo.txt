@@ -1,0 +1,57 @@
+Report modeling enablement in platform model for GQL based user interfaces -- Priya
+Platform modeling for Top Inner Labels - Pon
+Platform Modeling - Section Title Icon - Done
+Deployment metadata script generator changes for Security permissions for Export to excel  - Done
+BadgeText Property for DataHyperLink -- Done
+ECR difference report -- Hold
+Provision to upload mobility config xml, template and CSS into model and integrating 
+	with mobility code generator -- Done
+
+Auto pub-sub:
+	Metadata user give the control name and their category as System/Application  -- Done
+
+	new ui download, all the controls will populated for that ui.
+	If auto pub-sub enabled, those controls will be populated under each publication and subscription if that controls exists
+		and do the resolve link
+		
+
+01st Aug:
+=========
+XML change to Sampath - Tools & custom action -- Done
+Training QA
+Pagination task updation in bebs
+02st Aug:
+=========
+XML change to Sampath - Tools & custom action -- Done
+Training QA
+Pagination task updation in bebs
+
+04th Aug:
+========
+toolbar & sidebar - controltype shud be fetched as basecontroltype -- Done
+button style -- validation in header and grid columns -- Done
+changes in xml -- Done
+
+.\ExtractModifiedFilesWithinTimeFrame.ps1 -CloneDir "E:\git\platform\Latest\design-time\" -TargetDir "E:\PlatformEnhancements\2022\GitExtraction01Aug\" -FromDate "2022-06-02 00:00:00" -ToDate "2022-08-05 24:00:00"
+
+	
+  [Yesterday 11:58] Ramachandran T
+{
+    Reportname: '',
+    Outputformat: '' {pdf/xlsx/csv},
+    Mode: '', {online/offline},
+    ParamArr:[
+    {
+        Name: '', --> Report Parameter Name
+        Value: '' --> Screen Control / Constant
+    }
+}
+
+de_task_gql_report
+
+'Pagination Event for ' + ISNULL(@engg_control_name_tmp, '') 
+
+30 Aug:
+======
+GIT Updation
+Questions

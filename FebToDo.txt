@@ -1,93 +1,19 @@
-06 Feb:
-=======
-1. Ganesh -- migration issue in ngplf_dcn_publish
-2. Control 
+25th Feb:
 
-07 Feb:
-=======
-Show histogram test  ui -- Sample XML to sampath
-file size testing - coordinate with madhan
-List view - multi segment - validation testing -- Platform release
+New ui for importing new json - give to madhan
 
+One more result set for Attachment:
 
-TECH-69282 - V -- ListView Control & columns need not to be defaulted in Publication dataitems.
-TECH-71003 - V -- Rule Builder Latest SP was not compiled.
-TECH-70182 - V -- Pending with Ganesh
-
-TECH-67993 - A -- Handle changes
-TECH-71164 - A -- Handle changes
-TECH-72600 - A -- Handle changes -- could not find SP
-
-TECH-71021 - A -- Handle changes
-TECH-69234 - A -- Handle changes
-
-Offline Publish ECR
-
-Publish ECR:
-Select @msg = ecr_no +  ' is being published / unpublished by ' + publ_username +  ' from ' + cast(datepart (hh,start_time) as varchar(2)) + ':'+ cast(datepart (mi,start_time)as varchar(2))
-+ ':'+ cast(datepart (ss,start_time)as varchar(2)) + ' onwards. Please try after some time...'
-
--- Generate QueueID in the convention of first 3 letters of cust _ first 3 letters of project _ 001 (maximum number of queueid from the table)
-de_ecr_publish_chk - this table should have QueueID
-STatus will be updated as Queued
-
-Once it is published, send the mail to mailids.
-
-
-	REquestid column caption to be changed as 'Code Generation RequestID'
-	Add 2 more columns Queue ID, Mail ID
-	Add one more button 'Validate' in the First position.
-	
-	By default, it should fetch the Loggedin user mail id, queueid is empty.
-	
-	If msg raised like 'Please wait' - do the alternate way.
-	
-	2 SQL JOB
-		one is to send the mail
-		another one is to do the job. This needs to update the ECR status as 'Queued' and get the queued ECRs order by, 
-		top 1 ecr needs to call the publish SP, Once it is done, corresponding ECR status should be changed as 'Published' and send the mail.
-		Next the job to publish the next ECR.
-		
-External url for grid columns
-Tag control caption - new lable in xml
-
-Personalized teaching and Project based training for each student. Trained to give innovative ideas to explore their learning.
-Hope my kid can learn life skills, critical thinking, effective communication and ablility to face the challenges.
-We do not have any pros and cons on this.
-She likes to mingle with many friends, attached, caring and put her effort to get the good marks.
-Assessments provides valuable feedback like what they learnt well, where they struggled, where they needs improvement and how to achieve it.
-
-	Parents play a role in their child’s social, emotional and scholastic growth. Share your views on the above statement including any specifics 
-	The progress in learning is demonstrated only through assessments.Share your views on assessments
-	relating to your child.
-2,27,500 - 2,77,771=50,271
-3,20,000 - 4,94,411=1,74,411
-4,15,000 - 7,77,467=3,62,467
-780799.84
-783525.42
-784302.86
-777159.57
-777193.51
-806509.41 - 16may
-Total Fund Value
-₹ 766727.89 on 13th mar
-755233.22 on 15th mar
-752759.04
-756332.33
-757379.86
-753164.29
-754170.92
-767205.36
-768032.89 - 04 Apr
-Request to publish the ECR DFC_ECR_00002 has initiated at [Feb 20 2023  5:58PM] and having the error 'For the service :: DFCmainscSrfet, Method :: DFCmainscMtfetHdrFet, Errorid ::1111 Placeholder is not mapped'. Please resolve the error and publish the same
-
-
-
-
-
-75mbps
-3888
-
-
+SystemGeneratedFileId -- column also should be outed with storepath.
+				when we out, that control cannot be selected for 
+				"attachment with desc"
+SystemGeneratedFileId & attachmentwithdesc - both cannot be selected.
+		raise validation
 
 		
+3. create one more ecr for saleshub for second level query
+	compare the deliverables of first & second level query (for same component)
+	
+	Store Path and Ssytem generated file id added in the code generation function
+	
+	Control type & Task type published tables implementation in all the Publish and unpublish SPs.

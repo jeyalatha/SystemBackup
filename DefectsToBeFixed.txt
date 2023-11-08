@@ -1,0 +1,42 @@
+setup view process -- y taks tab ?
+releasemgmt -- y task tab ?
+Specify offline task & native app - y ok button ?
+
+fw_rmt_component_user -- this shud be inserted from hcm only
+y inserted in erp ?
+download ecr
+
+Y maintain bt list the grid control also ?
+web codegen check --all -- 
+deliverables path also check
+ 
+ To be checked:
+ ==================
+All mobile grid sould have 'is list' selected 
+All section should have root section need parent
+List item section cannot be in root. need listparent
+associated grid should be mapped to listparent section.
+
+
+SEction layout tab-> save button --> MLsave sp
+1. devicetype = 'P', 'T',
+	Controltype --> base controlr type --> grid,
+	'Is List' -- should be selected
+
+2. Section tab -- save button --< ml save sp
+	For incoming section and Associated control
+	 -- Grid control -- parent section should be allowed
+	 
+3. Direct Document Generation -- Hiding Task, Service, Method and SP TABS
+
+button bar & segmented button are same.
+Grid - multi column
+list - one column 
+if list is required as editable, go for native app 
+is deviceinfo -- if selected, mobility wil store the phone details
+
+
+swipe:
+
+Grid contents --> Column class -- > icon~Color
+applicable for datahyperlinks only

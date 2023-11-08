@@ -1,0 +1,27 @@
+GenerateServerSideFileId
+==========================
+***** Not applicable for attachement with desc
+
+	Glance - Validation for dynamic path - - in case of dynamic path attachement with desc 
+			option must be selected - in this case 3 (1 visible +  2 hidden)view must be 
+			available for a control (Jeya)
+	
+	For new control (upload / download) system must validate for attachement with desc. 
+	Both for glance and platform (Kiruthika)
+		
+											GenerateServerSideFileId
+component level code gen options	-		true
+default for new component			-		true
+for backward comptablity backend 	-		No (based on rtrack request. must be reverted to true
+											once code generation is completed)
+									-		(Jeya)	
+											
+GenerateServerSideFileId	must be returned in code gen options xml 	-	 (Jeya and Madhan)
+										
+From code gen options xml GenerateServerSideFileId must be fetched and passed to Hub JSON generator
+(Madhan and Hari)
+
+vw_netgen_activityschema_sp		-	Control Result set - (file upload / download), Store Path 
+									(Jeya and Madhan)
+									
+activity dll changes	(Madhan)

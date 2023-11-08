@@ -1,32 +1,63 @@
-Swipe Direction For Mobile UIs:
-==============================
-For the List control (it is nothing but a grid with single column with View option)
-By default, Only items will get displayed in each row. when they swipe, it shows the approve/reject icons with color.
+1.	L1 - Assessment Questions till engineering - InProgress
+2.	Report modeling enablement in platform model for GQL based user interfaces -- Done
+3.	Platform Modeling - Auto Height for Grid Control -- Done
+4.	Default for column type – base control type combo and edit based on system parameter -- Done
 
-In addition to user can decide the direction of swipe.
+5. Uniqueness of BT Synonym, Precision Type, BT Name, Method Name, Service Name and Error ID at customer 
+   project level for newly created entities only  -- 
+		-- Preview--> Maintain Glossary-->Add New
+		-- Preview-->Specify Layout-->Sections, Pages, Section Layout, Grid Contents -- Save Button on Modeflag 'I', 'X'
+		-- Design Engineering-->Hidden View BT Synonym -- Save Button on new entry
+		
+6. Recheck of system generated BT Synonym and restricting to max 30 characters
+		-- Preview--Save of Format, Pages, SEctions, Section Layout, Grid Contents
 
-2. Collapse/ Expand freezed columns in Grid:
-============================================
-ColumnCollapsibleMode is a new attribute added for the base control type Grid.
-Collapse/ Expand option needs to be enabled for the Freezed columns part..
-ColumnCollapsibleMode is the attribute
+7. Restricting segment name to 30 characters for newly created segments
+		-- Design REfinements--> Design Service--Segments tab --Save
+		DE_FW_DES_SERVICE_SEGMENT_SP_INS
+		de_update_refine_report_segments
+		de_update_refine_segments
+		de_generate_service_segment
+		de_create_segments
+		de_create_segment_dataitem
+		DE_PROVIDER_IBO_SEGMENT_SP_INS
+		DE_REQUESTOR_IBO_SEGMENT_SP_INS
+		DE_IBO_SEGMENT_DATAITEM_SP_INS
+		DE_IBO_SEGMENT_SP_INS
+		DE_FW_DES_SERVICE_SEGMENT_SP_DEL
+		DE_CREATE_WF_SEGMENT_DATAITEM
+		DE_BO_SEGMENT_SP_INS
+		
+		
+8. Restricting SP name to 30 characters for newly created segments
+		DE_FW_DES_SP_SP_INS
+		DE_FW_DES_SP_SP_DEL
 
-3. New attributes for Gantt & Histogram controls:
-==================================================
-Provision to model 
-	showScaleLines, 
-	hideScaleColumn, 
-	histogramRowHeight, 
-	showHistogramfitBtn, 
-	showHistogramToolbar 
-	showHistogramTimeLeft 
+9. Validation for new line character in error messages 
+		-- Design REfinements--Handle MEssages -- Message Definion--Message Description, Requirement Messages
+		-- Design REfinements--Handle MEssages -- Handle Message--Design Message Description,  Message Description
+		
+10. ECR Publish - Data consistency in fw_des_ilbo_service_view_datamap and fw_des_ilbo_service_view
+11. Platform Modeling - Provision to Pull To Refresh - UI Property for mobility Uis
+12. Platform Modeling - Provision to specify clear task for edit field - mobility
+13. Platform Modeling - Provision to specify progress bar (base control type - RsSlidder with min, max and step value) - mobility
+14. Plaform Modeling - Provision to specify animation for data grid (showAnimation) - mobility
+
+
+
+
+3. Validation in Publish ECR --> Segment data item ILBO association exists and not exists in data item master table,
+need to raise an validation
+
 	
-	If barclick task required for the histogram, System creates a Link task (with Traversal) and a Hiddenedit control
+	App layer Deliverables for Incorporating rTrackId with Document generation for the component Releasemgmt
 	
-4. Model data alignment for Header controls
-	One more attribute added at control type level, and implemented in the XML. Tag name is 'ControlDataAlign'
-	
-5. Provision for Menu Button in Glance:
-=======================================
-We have done this feature in Glance. currently, need to implement in Platform also.
-Analysis is going on
+
+Sep 2022:
+========
+Top inner - done
+Button style 
+Section Title Icon - hari 
+BadgeText Property for DataHyperLink  -- Prabhakar
+Provision to upload mobility config xml, template and CSS into model and integrating 
+	with mobility code generator -- Done

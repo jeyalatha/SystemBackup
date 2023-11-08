@@ -1,0 +1,31 @@
+1. Need validation when Publi association not done for a Control in manual design 
+		Exception:
+		(i)		UISubtype - offline
+		(ii)	For GQL UI
+        (iii)	Control attribute mapping entry	
+		(iv)	Publication & subscription entry
+                                                                        
+2. Report task should not have ML refresh methods (TECH-73893) even though action have the relevant attribute
+3. Dynamic caption & External URL info needed in service XML for Mobility
+4. Manage section validation  -- Document creation & 5 levels
+
+5. codegen ui & Publish ECR
+6. Rowspan & colspan for section and controls
+
+
+7. SEtup component, Delete flag, & select all checkbox??
+
+
+4. Apply Refinements -- Need validation / intimation of update service done already for that 
+generated service  (to avoid mistake in reuse of sp/method )- ECR Publish - Validation to ensure update service is done
+Need validation / intimation of update service done already for that generated service  
+(to avoid mistake in reuse of sp/method )
+Need validation when SP is reused across the services and  forgot to regenerate other the impacted services   - to avoid parameter mismatch across the Service when SP is reused  - ECR Publish - Validation to ensure update service is done
+
+ Platform modeling for mouse hover popup section
+Pending:
+=======
+1. In Refine service need to show the count of method mapped under that service before 
+& after the update service   
+(to avoid the mismatch of method count before and after the regeneration of services )
+popover height

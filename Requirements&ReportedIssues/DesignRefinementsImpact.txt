@@ -1,0 +1,9 @@
+de_fw_des_processsection_br_is --Processsec deleted
+de_fw_des_businessrule     --method deleted under that ps
+de_fw_des_reqbr_desbr --method deleted under that ps
+ de_fw_des_sp --method deleted under that ps
+ de_flowbr_method_map --method deleted under that ps
+ 
+ de_fw_des_di_parameter --method deleted under that ps
+ de_fw_des_br_logical_parameter --method deleted under that ps
+de_fw_des_ilbo_service_view_datamap -- parameter

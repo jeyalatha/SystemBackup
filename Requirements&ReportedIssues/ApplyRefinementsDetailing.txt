@@ -1,0 +1,19 @@
+1. If Apply Refinements is selected, Generate Service SP will call the Update services SP of 
+Refine Methods and Refine Services tab. 
+	(i) Process Section Sequence updation
+	(ii) Method Sequence updation
+	(iii) Method Parameter Sequence updation
+	(iv) Reuse SP Name Updation
+	
+3 Types of Mode.
+	Manual 		- Manual Service
+	Generated 	- Generated Service with out refinements
+	Refined 	- Generated Service with Refinements
+	
+No. Of Methods
+	It shows the number of methods during Generate service if mode is Generated & Refined
+	It shows the number of methods manually created for the service if mode is Manual
+	
+No. Of Methods (Post Refinement)
+	It is applicable only for the Refined mode.
+		It shows the number of methods after refinements completed.

@@ -1,69 +1,47 @@
+grduserdetails.SetContextValue("CRTL_UPLOAD_AUTO_FILE_REQ_203", "Y");
 
-March
+docfileupload.SetContextValue("CTRL_STORE_PATH_docfileupload", "..\docupload");
 
-1. UDS
-	(i)		Provision to import UDS client query JSON into platform model
-	(ii) 	Platform APIs to import UDS introspection JSON and client query JSON into platform model
-	(iii) 	Code generator feed for client query mapping
-
-2. Metadata clean-up for service definition - Processing type – Regular(value-1)/batch(Value-0)? Cached Zipped?? ClearKeyPattern
-
-Processing Type			bebs				avn						hcm		
-batch   				46					645						253
-regular	  				90845				36466					39088
-
-iscached       			0					0						0
-iszipped       			1673				551						498
-clearkey_pattern   		0					0						0	
- 
- 
-3. Top Inner -- need Label caption, label position & Label alignment
-4. Bulk validation for ECR publish
-5. Rollback / Undo functionality for ECR
-	Below tables are not handled in rollbak,
-		UI, Control Type, action pattern, Glossary, BT 
+Dynamic caption -- can be handled in separate tab ?
+PSR - generate service - can be handled in separate tab ?
+PSR - Manual service -- Define Service & Refine service 
+		- Add one more column in Segment tab & and in process section tab
 		
-6. Setup UI Preferences - Top & topinner added for Caption position 
+Attachment patch script for base and publish compiled in hcm db
 
-Top inner is applicable for:
-	Assorted
-	CheckBox
-	Combo
-	DataHyperLink
-	Edit
-	Link
-	ListEdit
-	ListView
-	RadioButton
-	Slider
+For base control type treegrid, add one more attribute 'Showlines' in left side grid. 
+same has to be printed in Genui xml
 
-Platform Moderization Screen Shot Information:
-===============================================
-Setup UI Style Sheets - Can be removed
-Specify Grids to be changed as  'Specify Grid Columns'
-Ethum worry pannatheenga ne..we are with u in all the  periods..
-athum kandippa in tough time.. we are keep on trying to bring the peaceful mind in u.
-as a girl, i cant ..anna said the yday matter.  that  sharing will be helpful to move forward..
-she atleast understand your love, affection and caring
-S042 Caption should be changed as Download ECR
-Define Action Patterns to be changed as Map Action Pattern
+Gantt, Calendar & Scheduler controls -- need to create one more system created control for filtering
+	capabilities
+	header - hidden edit - nvarchar(max)
+	this control needs to be printed in gen uixml and one more attribute 'IsFilter' also to be added for this control.
+		
+GQL CHange:
 
-change the flow attribute og segment is 1 if all the data items attribute is 1
+1. First tab, root query also to be displayed in addition to existing in LE load  -- done
+2. Queryname column width increased in the listedit
+3. user giving sequence should be updated at any time.  
+4. KeyField value should be a constraint any system created like 'taskname_001'
+5. Query name list edit in argument & field tabs, should have one hidden column for Key field and it should be resolved with a hidden control of header in both the tabs.
+6. Argument & Field tabs grid will fetch the value based on the key field available in hidden control in header
+7. Constraint changed based on the Keyfield in 3 tables.
+8. In argument tab, Root node 'Data' need not to be displayed in front end based on metatable.
+9. Querysplitlevel should be in meta and query load should be based on this meta table
+10. Alias is mandatory when we use same query more than once and alias should be unique for a task.
 
-22 Mar:
-=======
-jl_leg_iconhidden
-journey_leg_info
+1. Remove the sequence from PK, add one more column for uniqueness - done
+	KeyField - it is just concatenation of taskname and rowno of grid
+2. Based on the HdnKeyField, Fetch and Save SPs of all the three tabs will get changed. 
+3. Meta table should be inserted at the time screen launch - Priya
+
+4. In fields tab, MapType caption to be changed as 'Usage'. 
+5. ML Filedname LE, Fieldname width can be reduced, 
+Flattened Fieldname width should be increased 
+Queryname column in first tab grid to be increased.
+Fieldname width in third tab grid should be increased 
+
+Inbox Design Changes :
 
 
-BEBS: Top inner
-
-Mobility: Button -  There is no code in the SP for PreEvent and PostEvent of the Button.
-no Pre Event
-Post Event:
-ERP - 11 UI's
-HCM - 7 UI's
-AAD - No records
-
-Java: Code generation - 2 records diff
-
+TECH-67354: Check box is not consistent across all columns
