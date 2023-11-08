@@ -1,0 +1,69 @@
+
+March
+
+1. UDS
+	(i)		Provision to import UDS client query JSON into platform model
+	(ii) 	Platform APIs to import UDS introspection JSON and client query JSON into platform model
+	(iii) 	Code generator feed for client query mapping
+
+2. Metadata clean-up for service definition - Processing type – Regular(value-1)/batch(Value-0)? Cached Zipped?? ClearKeyPattern
+
+Processing Type			bebs				avn						hcm		
+batch   				46					645						253
+regular	  				90845				36466					39088
+
+iscached       			0					0						0
+iszipped       			1673				551						498
+clearkey_pattern   		0					0						0	
+ 
+ 
+3. Top Inner -- need Label caption, label position & Label alignment
+4. Bulk validation for ECR publish
+5. Rollback / Undo functionality for ECR
+	Below tables are not handled in rollbak,
+		UI, Control Type, action pattern, Glossary, BT 
+		
+6. Setup UI Preferences - Top & topinner added for Caption position 
+
+Top inner is applicable for:
+	Assorted
+	CheckBox
+	Combo
+	DataHyperLink
+	Edit
+	Link
+	ListEdit
+	ListView
+	RadioButton
+	Slider
+
+Platform Moderization Screen Shot Information:
+===============================================
+Setup UI Style Sheets - Can be removed
+Specify Grids to be changed as  'Specify Grid Columns'
+Ethum worry pannatheenga ne..we are with u in all the  periods..
+athum kandippa in tough time.. we are keep on trying to bring the peaceful mind in u.
+as a girl, i cant ..anna said the yday matter.  that  sharing will be helpful to move forward..
+she atleast understand your love, affection and caring
+S042 Caption should be changed as Download ECR
+Define Action Patterns to be changed as Map Action Pattern
+
+change the flow attribute og segment is 1 if all the data items attribute is 1
+
+22 Mar:
+=======
+jl_leg_iconhidden
+journey_leg_info
+
+
+BEBS: Top inner
+
+Mobility: Button -  There is no code in the SP for PreEvent and PostEvent of the Button.
+no Pre Event
+Post Event:
+ERP - 11 UI's
+HCM - 7 UI's
+AAD - No records
+
+Java: Code generation - 2 records diff
+

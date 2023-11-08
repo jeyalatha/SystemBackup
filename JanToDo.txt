@@ -1,0 +1,48 @@
+Testing for previous release:
+
+1. For IconClass, to identify the new feature, SystemClass attribute added in the Control and Column node of XML. 
+	If it is a new icon, SystemClass= 'Y'	Else SystemClass = 'N'
+	All the new icons are available as Meta data in the table ep_icon_met.
+	SystemClass - column is added in the table ep_ui_control_dtl, re, de, relevant publish tables with udd as engg_flag
+	Sample UI: withhelddetails
+	
+2. Rowspan and colspan for sections -- testing
+
+3. XML Change for  RowSpan & Colspan in section node
+	comment Exisitng colspan attribute.
+	change Nrowspan attribute as RowSpan
+	change NColspan attribute as ColSpan
+
+4. Resequencing the Grid Columns:
+	In Grid ocntents tab, Decimal BT has been mapped for  the sequence column. 
+	If user wants to insert the new column in 4 the position, user has to give the  sequence value as 3.1 for new record. It will added as 4 nad rem
+	If user wants to insert the new columns from 4 the position, user has to give the sequence value as 3.1, 3.2, 3.3 etc.. for new record. It will added as 4 nad rem
+	
+5. Button Height:
+	Height column is added in the section layout tab. It is applicable only for Buttons.
+	
+6. Help icon added for icon class column of grid contents tab.
+
+7. Side drawer - Meta data has been splitted as Drawer-Left,Right,Top,Bottom.
+	In Traversal tab, Manage Actions tab and Extension column in Section Layout tab
+	Existing one to be deleted and new 4 meta data to be added.
+	Check the Existing data in 3 servers, and update the existing 'Side Drawer' as Drawer-Right
+
+8. Add one more attribute 'Histogram' for the Base control type 'TreeGrid'. It is applicable only for Gantt control.
+	Default control type for Gantt Control. xml attribute - ShowHistogram (Y / N)
+	
+9. For attachment control, one control type attribute needs to be added to accept the maximum value.
+	This value should be printed in the activity Dll. so Web config will have the entry for no considering the maximum value.
+
+10. MDCF issue
+	
+
+engg_mr_de_des_publish_insert_203_2_2
+
+Hide the links which are not applicable - (ex: eZeeView)
+TECH-73518 - Validation for default values of segment data items and method parameters
+TECH-72956 - Validation to restrict hidden view definition for list edit, multi select combo controls
+TECH-72725 - Validation to restrict work request publish when no columns are defined for listedit controls
+TECH-69657 - List loading - System allowed to map the single segment dataitem for list view control.  But it should allow only for multi segment data items. 
+TECH-69420 - Codegen failed due to invalid control attribute mapping. System is not validated this invalid control attribute mapping in publish ECR
+

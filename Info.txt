@@ -1,0 +1,1 @@
+https://bryntum.com/products/gantt-for-extjs/examples/histogram/

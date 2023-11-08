@@ -1,0 +1,32 @@
+Swipe Direction For Mobile UIs:
+==============================
+For the List control (it is nothing but a grid with single column with View option)
+By default, Only items will get displayed in each row. when they swipe, it shows the approve/reject icons with color.
+
+In addition to user can decide the direction of swipe.
+
+2. Collapse/ Expand freezed columns in Grid:
+============================================
+ColumnCollapsibleMode is a new attribute added for the base control type Grid.
+Collapse/ Expand option needs to be enabled for the Freezed columns part..
+ColumnCollapsibleMode is the attribute
+
+3. New attributes for Gantt & Histogram controls:
+==================================================
+Provision to model 
+	showScaleLines, 
+	hideScaleColumn, 
+	histogramRowHeight, 
+	showHistogramfitBtn, 
+	showHistogramToolbar 
+	showHistogramTimeLeft 
+	
+	If barclick task required for the histogram, System creates a Link task (with Traversal) and a Hiddenedit control
+	
+4. Model data alignment for Header controls
+	One more attribute added at control type level, and implemented in the XML. Tag name is 'ControlDataAlign'
+	
+5. Provision for Menu Button in Glance:
+=======================================
+We have done this feature in Glance. currently, need to implement in Platform also.
+Analysis is going on

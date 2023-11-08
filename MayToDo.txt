@@ -1,0 +1,15 @@
+Provision to preview ui proto with templates, icons and tiles
+Rollback / Undo functionality for WR, RCN and ECR
+TECHB-924 - Bulk validation for RCN publish
+TECHB-924 - Bulk validation for WR publish
+
+
+Provision to override rTrack and Feature Id during initiate code generation.	Jeya
+TECHB-924 - Bulk validation for ECR publish	Jeya
+TECHB-925 - Publish ECR in offline mode (queuing)	Jeya
+atleast, we will make her to understand your infinite love, affection and caring in her.
+you will have a peaceful and happiest life soon. 
+Eventing – Spec time changes for publishing event for unit for work at method level	Jeya
+Eventing - Topic combo must be changed listedit	Jeya
+Provision to preview ui proto with templates, icons and tiles - Phase-1	Jeya
+

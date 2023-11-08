@@ -1,0 +1,89 @@
+MvjNgg45
+
+NcmIuh91
+
+vgiris@gmail.com
+
+
+grpc
+cadence, temporal 
+
+
+type script
+react
+middle layer dotnet 6
+nosql
+elastic, mongo
+
+
+[10:02] Priyadharshini U
+
+https://ops.ramcouat.com/gitlab/ramco-tech/platform/platform-app/specification-time/tree/dev/HandleChanges/Release/RM
+
+
+[Yesterday 09:31] Ponmalar A
+
+ep_systemdefined_controls_ins_sp
+================================
+MobileGrid as Section
+MobileGrid as Grid Control
+
+
+ep_systemdefined_controls_ins_sp
+ep_layout_save_events_gen
+
+Specify Layout -- Validate, Specify eZee View, Specify Custom Section, Specify Device Configuration, Specify Template, Design Template.                                                   
+Specify Behavior -- Validate, Specification.                                                                                                                                                                       Publish Work Request  -- Exceptions and Validations, Rollback Work Request                                                                          Publish RCN -- Exception and Validations, Rollback RCN                                                  Publish ECR -- Exception and Validation                    Validate and Attach Document Links removed from all the Activities.                                                                                    
+
+ 
+
+ep_layout_ep_layout_callout.js
+
+
+https://ops.ramcouat.com/gitlab/ramco-tech/platform/platform-app/specification-time/blob/dev/Preview/Release/Web/VirtualWorks/IIS/hub/app/classic/preview/ep_tpl_ctrl_mapping_ep_tpl_ctrl_mappingui_callout.js
+
+
+If dynamicreportname value is manually updated as 'y' in the table 'de_report_action_dataset_segment' for the dataset, system creates a dataitem under the dataset. Dataitem convention: datasetname + '_dyn_rptname'
+
+
+Calendar:
+ColumnCollapsibleMode
+
+Gantt & Histogram:
+-----------------
+ShowScaleLines,
+ShowScaleColumn,
+HistogramFit,
+ShowHistogramZoom,
+ShowHistogramTimeLeft,
+BarClickTaskRequired,
+HistogramToolbar,
+HistogramExpand,
+HistogramRowHeight,
+
+Gantt Control:
+-------------
+ShowTimeLeft, ShowScaleLines, ShowScaleColumn, BarClickTaskRequired
+
+HistogramFit, ShowHistogramZoom, ShowHistogramTimeLeft, HistogramToolbar, HistogramExpand, HistogramRowHeight	
+
+
+
+
+ 
+https://ci5.googleusercontent.com/proxy/X9I4bD4kDkKq_VQzLL-U39OG06N070WAryT_QFMiaJOKZsCyAUDZZYKAGmZ5e9H6Uz0Gac3ye_pkQ2bKNQj_nrhnyQuzXPuwD-53weRGoZUUmTBFlcQ7BCXJFPCfHYTrKw_3voMWFnHRftmxMHxccV29mU0HKMZv0BpsSPQjytkF0ws7=s0-d-e1-ft#https://fonts.gstatic.com/s/i/googlematerialicons/open_in_new/v21/gm_grey-24dp/1x/gm_open_in_new_gm_grey_24dp.png
+
+ 
+
+https://accounts.google.com/AccountChooser?continue=https://classroom.google.com/c/NTYzNzI3NTQ5OTcy/p/NjI0ODc0MTQyMzcw&Email=yuvadharshinis@apl.edu.in
+
+
+[11:13] Priyadharshini U
+
+http://hcmwascnv70.ramco/rvw/hub
+10907 / SU23GAN24YA2
+
+10907 / SU23GAN24YA2
+
+techst
+plfuser/ramco@123

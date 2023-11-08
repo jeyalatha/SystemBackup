@@ -1,0 +1,22 @@
+Scan Control:	
+	(i) For the Edit control, scan is an attribute. If ui task required, can be given as usual.
+	(ii) If Navigation required for Scan control, User should create hidden link control and give this link control as an Associate control
+		for the scan control.
+	(iii) Associated Task will be printed against the Hidden link control in XML, user can fire the service for this Link Task.
+	(iv) If this Link task is enabled, Edit task will not get fired in mobile.
+	
+
+Native App:
+	(i) Native application check box to be enabled in format tab.
+	(ii) Create a Listitem section and create the controls 
+	(iii) simultaneously, Create a Grid control and the relevant columns.
+	(iv) In sections tab, for the Listitem section, Give the Grid control as Associte Control.
+	(iv) In Manage Native app templates screen, Map the List item section controls with Associated Grid Columns.
+	
+	
+UDS - Unify Data Services
+
+Unify - Client RT is Sencha
+Evolve - Client RT is React -- User has to regenerate code 
+RIDS - Ramco Identity Services
+iRIS - Ramco Integration Service

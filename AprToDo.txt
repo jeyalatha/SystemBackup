@@ -1,0 +1,58 @@
+Deepika -- Chips issue Done 
+Ganesh --Irule state issue Pending
+Madhan - one more column in last resultset Done 
+Rams - Handle changes object Done
+
+
+Base control type : Grid 	RenderAS
+			Is Tag 				Tag
+			Is Chips			Chipos ?
+			
+			
+Runtime & state xml to sampath
+Saravanan mail for state xml
+Caption cannot be changed message
+
+Download ECR    -    Default customer project issue
+Request for code generation 
+    Default customer project issue
+    Option and Java Options to be hidden
+    Tab height
+    Code gen completion mail
+
+
+
+"Metadata clean-up for service definition - 
+Processing type – Regular/batch?
+Cached
+Zipped??
+ClearKeyPattern"
+Provision to import UDS client query JSON into platform model
+C85 - Design Follow Up Task - content is not correct 
+
+
+
+
+Adding rTrackID & FeatureID in Publish ECR & Initiate Codegen
+UDS for Client Query
+Release
+Template Master screen in Platform
+
+
+19 Apr 23:
+----------
+Web codegen in tech56 - Done
+Generate service error in tech56 -- Done 
+Viewname change bcaz of grid column sequence change - Done
+	- this impact in listedit definition - list edit not printed in actiivty  source code 
+Grid column seq - changed to numeric should be reverted -- Done 
+Column grouping seq - changed to numeric should be reverted -- Done
+	
+
+caption required is not saving - getting saved properly in all other environments  -- Check 
+By default apply refinements checkbox should not be selected -- Done
+validation should be raised for mailid if initiate code gen is selected -- Done 
+
+customer & project in publish ECR - working
+Implement process only selected rows option in Publish ECR UI
+Deployment meta data generation to be defaulted during Auto initiate code gen

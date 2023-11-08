@@ -1,0 +1,135 @@
+https://bryntum.com/products/gantt-for-extjs/examples/histogram/
+
+Type script
+node js
+react
+FMS_SER_CONTRCT_ACT_FMS_CONTRACT_LIST
+
+		 one hiddenedit & Link Task
+		
+-- ascBarDataControl -- not needed
+		
+Bar Click Task Required -- Histogram must be selected 
+Gantt Title --- Gantt attribute must be selected
+Histogram Title -- Histogram must be selected 
+
+above 3 attributes for base contrl type : TreeGrid
+
+Show Scheduler -- for the base control type : Grid 
+		Scheduler must be selected
+		
+		
+		HotFix releases consolidation
+		31st aug:
+		=========
+		Swipe direction -- Asked user to give the available direction (Left/Right) in the columnclass column in the grid
+				Icon~Color~SwipeDirection
+				XML changes alone
+		collapse/expand freezed columns in grid - columnCollapsibleMode -- Done
+		 Provision to model data alignment for header controls  -- Can Manage with Column Data Alignment attribute for Edit Control Type
+		 Provision to model more button for evolv / unify app (similar to menu button in glance) -- 
+		  Provision to model showScaleLines, hideScaleColumn, histogramRowHeight, showHistogramfitBtn, showHistogramToolbar and showHistogramTimeLeft for Gantt control
+				-- done
+		  
+		  API to To return list of task for a given process, component, ecrno, activity, ilbo
+		  API to get list of task for a given process, component, activity and ilbo (for test automation coverage scenarios) -- Activity level is advisable
+		  Integrating path finder in base platform
+			http://172.29.62.5/rvw
+			LGT_rollback_user / Ramco12*
+			Generate Service -- Path finder --> check the data
+		  
+		  API to fetch service, segment details for a given service
+
+Dynamic Report Name:
+======================
+
+Tablename - de_report_action_dataset_segment 
+
+Column      - DynamicReportName ('Y')
+
+If DynamicReportName is 'Y' then Dataitem inserted in 2 table  
+
+"de_report_action_dataset_dataitem & de_report_dataset_dataitem_map"
+
+Dataitem format - datasetname + '_dyn_rptname'
+
+		
+	https://ramcosystems-my.sharepoint.com/:v:/g/personal/15772_ramco_com/EW-0eEUnhj9NsRN_PwXLwEABI4VW66X9lbaQb_BTUIq1pg	  
+	
+GET API:
+===========
+REq: ServiceName
+	Res: SEgment
+			Dataitem
+			
+	2 layers output
+	
+	
+	
+	[12:40] Ramachandran T
+
+POST API:
+
+============
+Req:
+all as array
+[    
+
+    ProcessName
+
+    ProcessDesc
+
+    ComponentName
+
+    ComponentDesc
+
+    ActivityName
+
+    ActivityDesc 
+
+    ILBOName
+
+    ILBODesc
+
+]
+
+ 
+
+Response:
+
+[
+
+    ProcessName
+
+    ProcessDesc
+
+    ComponentName
+
+    ComponentDesc
+
+    ActivityName
+
+    ActivityDesc 
+
+    ILBOName
+
+    ILBODesc
+
+    TaskName
+
+    TaskDesc
+
+    ServiceName
+
+]
+
+
+
+Dyamic report name for service based report in design report ui:
+
+
+http://bebswascnv01.ramco/rvw/hub/index.html?bl=en-us&_dc=1630480756899&RVWRTQS_REQID=ec7b55e2-9d5d-436f-8dee-d7d182c53cd1
+
+[15:39] Vidhya A
+
+12698/ RAMCO@1234

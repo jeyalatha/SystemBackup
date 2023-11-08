@@ -1,0 +1,126 @@
+1. Request for Code Generation UI:  -- Completed and Released
+	In Component tab, Add the below 2 columns after workflow offset column:
+
+		1. MDCF --  check box -- if it selected, it should be saved as 'Y' Else it should be saved as 'N'
+		2. Device Config path -- Edit - Engg_Description -- It is already there in the table, if exists, it should fetch from the table.
+				and should save the given value.
+		Both the columns should be available in the table engg_devcon_codegen_options
+		
+2.	Dependency Viewer Api to return feature id / rTRACK id for given ECR in platform API-- Completed and Released
+		Needs to be added the above 2 columns in the Platform API - SP-Task
+
+link https://www.figma.com/file/gc46ptD5D9WE4exL70IrKw/Pathfinder?type=design&node-id=36%3A216&mode=design&t=4mGiGzDNLPYoilRF-1
+
+3.	Two APIs must be published to get object description	-- Pending
+		To get the table, view, function, Table valued function and Synonym
+			
+
+4. Depth level SP result for ERP Components -- no need to fetch the dependent object list..only count is enough
+	ERP - Model and Application backups are available in the techwarcnv57 server.
+		Changes: not required depth level objects..need model sp name and their depth level alone
+		
+		Sample Data:
+		=============
+		Depth 1 - CFS_Vehicle, EAMREP,    EWBM
+		Depth 3 - OfflineReports_Exp,    WMSReports,    AdditionalParameters
+		Depth 4 - PPVW,    ISA,    BUBCT,    SVA
+	
+5. 	Depmeta change for evolv configuration -- Completed and released
+		SP change
+		
+6. MDCF - Service based mdcf sp change -- Completed 
+		DE_MDCF_SERVICE_TEMPLATE_SP
+
+7. application table name,column name -- Pending
+
+8. Model Explorer APIs - InProgress
+https://tech-st1.ramcouat.com
+	
+Template to be tested and release 
+Auto Complete for combe revert -- Pending 
+Follow-up for DEVOPS – auto deploy
+iRule Preview BR -- Pending for Release
+Language Option -- to be tested
+Option not to build - By default, Build option should not be enabled. if user wants, he has to enable.
+Documentation in API
+Template  xml generation sp
+XML for Multiselect combo
+
+Dependency viewer to get all the referenced entities for 
+
+TECH-73052
+TECH-8127
+
+
+git clone "http://ops.ramcouat.com/gitlab/ramco-tech/platform/platform-app/platform-apis.git"
+
+Base Control Type : Tree Grid
+
+Left Grid:
+===========
+Gantt control - must be selected
+Show  Zoom: true,
+Reset Zoom: true,
+Show  Time Left: true,
+
+Gantt control - must be selected
+Histogram - must be selected
+
+Show Scale Lines: false,
+Show Scale Column: true / false
+
+Show Histogram Zoom: true,
+Reset Histogram Zoom: true,
+Show Histogram Time Left: true,
+
+Right Grid:
+==========
+Histogram Row Height: 50 / 100
+
+row height - default is 50
+
+UserDefinedDatatype
+
+28th Jul:
+========
+Control type attribute: Column Collapsible Mode 		options: Left, Right, Both are added for the base control type Grid.
+
+Template Feature release - pending with Vimal
+Hotfix consolidation for release 
+API release with new Prodcut group in single installer  - ask Soundra pandi
+BRO code and meaningful method documentation for Model explorer testing -- Given to Giri
+
+
+31st Jul:
+========
+1.	Support + DEV consolidated fixes -- Inprogress
+2.	Web based code generator – language considerations, mdcf, device config path
+3.	Web based code generator – Evolv integration, UI level attribute
+4.	Evolv deployment script
+5.	INTD attribute for Bulk method
+6.	Preview – MSDTC removal for iRule
+These 6 are for 02nd Aug Release
+
+TECHB-1065
+
+
+
+
+I take care of platform development.
+This week we added few features in the dependence viewer.	
+	Provision to display the rtrackid and FeatureID for the given ECR.
+	Provision to get all the referencing objects for the given application stored procedure
+	REverse impact analysis - to fetch the list of component,activity, ui and task
+	
+Model Explorer:
+	Provided API to fetch all the solutioning nodes like Customer, Project, Process, component
+	
+	currently we do the APIs to fetch the Engineering nodes like Documents, Service, Process section, Method and their parameters
+	
+	modernization of platform 
+	
+	
+node text - sp name
+bro instead of method
+
+
